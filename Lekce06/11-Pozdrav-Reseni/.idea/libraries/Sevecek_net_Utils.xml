@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Sevecek.net Utils">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/Sevecek.net Utils/sevecek-net-utils.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/Sevecek.net Utils/sevecek-net-utils-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

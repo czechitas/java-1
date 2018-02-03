@@ -1,0 +1,17 @@
+    private boolean detekujKolizi(JComponent komponenta1, JComponent komponenta2) {
+        int ax = komponenta1.getX();
+        int ay = komponenta1.getY();
+        int bx = ax + komponenta1.getWidth();
+        int by = ay + komponenta1.getHeight();
+        int cx = komponenta2.getX();
+        int cy = komponenta2.getY();
+        int dx = cx + komponenta2.getWidth();
+        int dy = cy + komponenta2.getHeight();
+
+        if (bx >= cx && by >= cy
+                && ax <= dx && ay <= dy) {
+            return true;
+        } else {
+            return false;
+        }
+    }

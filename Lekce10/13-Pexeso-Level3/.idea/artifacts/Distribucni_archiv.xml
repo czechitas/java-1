@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact build-on-make="true" name="Distribucni archiv">
+    <output-path>$PROJECT_DIR$/dist</output-path>
+    <root id="root">
+      <element id="archive" name="aplikace.jar">
+        <element id="module-output" name="Pexeso" />
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/res/MANIFEST.MF" />
+        </element>
+      </element>
+      <element id="directory" name="lib">
+        <element id="library" level="project" name="Sevecek.net Utils" />
+        <element id="library" level="project" name="MigLayout" />
+      </element>
+      <element id="file-copy" path="$PROJECT_DIR$/res/Spustit-Mac.command" />
+      <element id="file-copy" path="$PROJECT_DIR$/res/Spustit-Windows.bat" />
+    </root>
+  </artifact>
+</component>

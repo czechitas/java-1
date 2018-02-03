@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D587F300-7A70-4C5C-971F-233817E0BF61}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AngryBirds</RootNamespace>
+    <AssemblyName>AngryBirds</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Engine\FieldType.cs" />
+    <Compile Include="Engine\Implementation\ConvertorToIUserDefinedGame.cs" />
+    <Compile Include="Engine\Localization\en\To.cs" />
+    <Compile Include="Engine\Localization\en\GameEn.cs" />
+    <Compile Include="Engine\Localization\en\CharacterEn.cs" />
+    <Compile Include="Engine\Localization\cs-cz\ConvertorToIUserDefinedGameCZ.cs" />
+    <Compile Include="Engine\Interfaces\ICharacter.cs" />
+    <Compile Include="Engine\Interfaces\IGame.cs" />
+    <Compile Include="Engine\Interfaces\IGameBoard.cs" />
+    <Compile Include="Engine\Localization\cs-cz\IUzivatelemDefinovanaHra.cs" />
+    <Compile Include="Engine\Localization\cs-cz\Hra.cs" />
+    <Compile Include="Engine\Localization\cs-cz\HraciPlocha.cs" />
+    <Compile Include="Engine\Localization\cs-cz\Postava.cs" />
+    <Compile Include="Engine\Implementation\Character.cs" />
+    <Compile Include="Engine\Direction.cs" />
+    <Compile Include="Engine\Localization\cs-cz\Do.cs" />
+    <Compile Include="Engine\CharacterHandler.cs" />
+    <Compile Include="Engine\Implementation\Game.cs" />
+    <Compile Include="Engine\Implementation\GameBoard.cs" />
+    <Compile Include="Engine\Interfaces\IUserDefinedGame.cs" />
+    <Compile Include="Engine\Localization\Texts\Texts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Texts.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\Level10.cs" />
+    <Compile Include="Levels\Level11.cs" />
+    <Compile Include="Levels\Level12.cs" />
+    <Compile Include="Levels\Level13.cs" />
+    <Compile Include="Levels\Level14.cs" />
+    <Compile Include="Levels\Level15.cs" />
+    <Compile Include="Levels\Level16.cs" />
+    <Compile Include="Levels\Level17.cs" />
+    <Compile Include="Levels\Level18.cs" />
+    <Compile Include="Levels\Level19.cs" />
+    <Compile Include="Levels\Level2.cs" />
+    <Compile Include="Levels\Level20.cs" />
+    <Compile Include="Levels\Level3.cs" />
+    <Compile Include="Levels\Level4.cs" />
+    <Compile Include="Levels\Level5.cs" />
+    <Compile Include="Levels\Level6.cs" />
+    <Compile Include="Levels\Level7.cs" />
+    <Compile Include="Levels\Level8.cs" />
+    <Compile Include="Levels\Level9.cs" />
+    <Compile Include="OurGame.cs" />
+    <Compile Include="Properties\CanBeNullAttribute.cs" />
+    <Compile Include="Engine\TurnType.cs" />
+    <Compile Include="Engine\Localization\cs-cz\TypPolicka.cs" />
+    <Compile Include="Properties\AspChildControlTypeAttribute.cs" />
+    <Compile Include="Properties\AspDataFieldAttribute.cs" />
+    <Compile Include="Properties\AspDataFieldsAttribute.cs" />
+    <Compile Include="Properties\AspMethodPropertyAttribute.cs" />
+    <Compile Include="Properties\AspMvcActionAttribute.cs" />
+    <Compile Include="Properties\AspMvcActionSelectorAttribute.cs" />
+    <Compile Include="Properties\AspMvcAreaAttribute.cs" />
+    <Compile Include="Properties\AspMvcAreaMasterLocationFormatAttribute.cs" />
+    <Compile Include="Properties\AspMvcAreaPartialViewLocationFormatAttribute.cs" />
+    <Compile Include="Properties\AspMvcAreaViewLocationFormatAttribute.cs" />
+    <Compile Include="Properties\AspMvcControllerAttribute.cs" />
+    <Compile Include="Properties\AspMvcDisplayTemplateAttribute.cs" />
+    <Compile Include="Properties\AspMvcEditorTemplateAttribute.cs" />
+    <Compile Include="Properties\AspMvcMasterAttribute.cs" />
+    <Compile Include="Properties\AspMvcMasterLocationFormatAttribute.cs" />
+    <Compile Include="Properties\AspMvcModelTypeAttribute.cs" />
+    <Compile Include="Properties\AspMvcPartialViewAttribute.cs" />
+    <Compile Include="Properties\AspMvcPartialViewLocationFormatAttribute.cs" />
+    <Compile Include="Properties\AspMvcSupressViewErrorAttribute.cs" />
+    <Compile Include="Properties\AspMvcTemplateAttribute.cs" />
+    <Compile Include="Properties\AspMvcViewAttribute.cs" />
+    <Compile Include="Properties\AspMvcViewLocationFormatAttribute.cs" />
+    <Compile Include="Properties\AspRequiredAttributeAttribute.cs" />
+    <Compile Include="Properties\AspTypePropertyAttribute.cs" />
+    <Compile Include="Properties\AssertionConditionAttribute.cs" />
+    <Compile Include="Properties\AssertionConditionType.cs" />
+    <Compile Include="Properties\AssertionMethodAttribute.cs" />
+    <Compile Include="Properties\BaseTypeRequiredAttribute.cs" />
+    <Compile Include="Properties\CannotApplyEqualityOperatorAttribute.cs" />
+    <Compile Include="Properties\CollectionAccessAttribute.cs" />
+    <Compile Include="Properties\CollectionAccessType.cs" />
+    <Compile Include="Properties\ContractAnnotationAttribute.cs" />
+    <Compile Include="Properties\HtmlAttributeValueAttribute.cs" />
+    <Compile Include="Properties\HtmlElementAttributesAttribute.cs" />
+    <Compile Include="Properties\ImplicitUseKindFlags.cs" />
+    <Compile Include="Properties\ImplicitUseTargetFlags.cs" />
+    <Compile Include="Properties\InstantHandleAttribute.cs" />
+    <Compile Include="Properties\InvokerParameterNameAttribute.cs" />
+    <Compile Include="Properties\LinqTunnelAttribute.cs" />
+    <Compile Include="Properties\LocalizationRequiredAttribute.cs" />
+    <Compile Include="Properties\MacroAttribute.cs" />
+    <Compile Include="Properties\MeansImplicitUseAttribute.cs" />
+    <Compile Include="Properties\NoEnumerationAttribute.cs" />
+    <Compile Include="Properties\NoReorder.cs" />
+    <Compile Include="Properties\NotifyPropertyChangedInvocatorAttribute.cs" />
+    <Compile Include="Properties\PathReferenceAttribute.cs" />
+    <Compile Include="Properties\PublicAPIAttribute.cs" />
+    <Compile Include="Properties\PureAttribute.cs" />
+    <Compile Include="Properties\RazorHelperCommonAttribute.cs" />
+    <Compile Include="Properties\RazorImportNamespaceAttribute.cs" />
+    <Compile Include="Properties\RazorInjectionAttribute.cs" />
+    <Compile Include="Properties\RazorLayoutAttribute.cs" />
+    <Compile Include="Properties\RazorSectionAttribute.cs" />
+    <Compile Include="Properties\RazorWriteLiteralMethodAttribute.cs" />
+    <Compile Include="Properties\RazorWriteMethodAttribute.cs" />
+    <Compile Include="Properties\RazorWriteMethodParameterAttribute.cs" />
+    <Compile Include="Properties\RegexPatternAttribute.cs" />
+    <Compile Include="Properties\SourceTemplateAttribute.cs" />
+    <Compile Include="Properties\StringFormatMethodAttribute.cs" />
+    <Compile Include="Properties\TerminatesProgramAttribute.cs" />
+    <Compile Include="Properties\UsedImplicitlyAttribute.cs" />
+    <Compile Include="Properties\ValueProviderAttribute.cs" />
+    <Compile Include="Properties\XamlItemBindingOfItemsControlAttribute.cs" />
+    <Compile Include="Properties\XamlItemsControlAttribute.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NaseHra.cs" />
+    <Compile Include="Levels\Level1.cs" />
+    <Compile Include="Levels\Level.cs" />
+    <Compile Include="MainWindow.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\ItemCanBeNullAttribute.cs" />
+    <Compile Include="Properties\ItemNotNullAttribute.cs" />
+    <Compile Include="Properties\NotNullAttribute.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Engine\Localization\Texts\Texts.cs-cz.resx" />
+    <EmbeddedResource Include="Engine\Localization\Texts\Texts.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Texts.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\AngryBird.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AngryBird270.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AngryBird180.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AngryBird90.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\obstacle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\path.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\pig.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
