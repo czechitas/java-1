@@ -33,6 +33,7 @@ public class HlavniOkno extends JFrame {
     JLabel labKarta16;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
     JPanel contentPane;
+    MigLayout migLayoutManager;
     List<JLabel> seznamKaret;
     Icon obrazekRubuKaret;
 
@@ -82,7 +83,10 @@ public class HlavniOkno extends JFrame {
             "[grow]"));
         this.contentPane = (JPanel) this.getContentPane();
         this.contentPane.setBackground(this.getBackground());
-
+        LayoutManager layout = this.contentPane.getLayout();
+        if (layout instanceof MigLayout) {
+            this.migLayoutManager = (MigLayout) layout;
+        }
 
         //---- labKarta1 ----
         labKarta1.setIcon(new ImageIcon(getClass().getResource("/cz/czechitas/pexeso/obrazky/1.jpg")));

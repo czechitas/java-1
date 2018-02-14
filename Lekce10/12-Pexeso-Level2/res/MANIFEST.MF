@@ -1,3 +1,0 @@
-Manifest-Version: 1.0
-Main-Class: cz.czechitas.pexeso.SpousteciTrida
-Class-Path: lib/sevecek-net-utils.jar lib/miglayout-core-5.0.jar lib/miglayout-swing-5.0.jar

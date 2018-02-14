@@ -23,6 +23,8 @@ public class SpousteciTrida {
         //---------------------------------------------------------------------
 
         // TODO: Sem napiste recept na bublaninu
+        // Pouzivejte napovidani v editoru.
+        // Vyskakuje samo nebo pomoci Ctrl+Mezernik
         cervenaMiska.nalozJedenKus(vajicka);
     }
 

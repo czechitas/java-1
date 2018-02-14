@@ -2,8 +2,8 @@ Cil lekce:
 ---------
 Predstavovani
 Rozchozeni instalace
-    Je vhodne mit vetsi pocet koucu na prvni hodine nez v prubehu kurzu.
-    Je vhodne mit zkusene macare a windowsare, protoze holky budou mit problemy s instalaci bez ohledu na to, jak blbuvzdorny navod pripravime (nedodrzovani navodu je klasika).
+    Na prvni hodine je vhodne mit vetsi pocet koucu nez v prubehu kurzu.
+    Je vhodne mit zkusene macOSare a Windowsare, protoze holky budou mit problemy s instalaci bez ohledu na to, jak blbuvzdorny navod pripravime (nedodrzovani navodu je bohuzel bezne).
     Nicmene mam vyzkouseno, ze s detailne pripravenym a odskousenym navodem se screenshoty pro vsechny podporovane platformy, se z hodiny nestane install-fest a da se to zvladnout behem 10-15 minut.
 Nakonec je zahrivaci priklad Bublanina (ve stylu skladani Blockly).
 

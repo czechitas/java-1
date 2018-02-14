@@ -14,7 +14,7 @@ public class SpousteciTrida {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (NullPointerException | ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
-            System.err.println("Nepodaøilo se nastavit System look and feel pro Swing");
+            System.err.println("NepodaÅ™ilo se nastavit System look and feel pro Swing");
         }
 
         HlavniOkno okno = new HlavniOkno();

@@ -2,12 +2,14 @@ package cz.czechitas.desktopapp;
 
 import java.awt.*;
 import javax.swing.*;
+import net.miginfocom.swing.*;
 
 public class HlavniOkno extends JFrame {
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // JFormDesigner - End of variables declaration  //GEN-END:variables
     JPanel contentPane;
+    MigLayout migLayoutManager;
 
     public HlavniOkno() {
         initComponents();
@@ -18,11 +20,20 @@ public class HlavniOkno extends JFrame {
 
         //======== this ========
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("13-Desktopova_aplikace_ze_sablony_3");
+        setTitle("Desktopova aplikace");
         Container contentPane = getContentPane();
-        contentPane.setLayout(null);
+        contentPane.setLayout(new MigLayout(
+            "insets rel,hidemode 3",
+            // columns
+            "[fill]",
+            // rows
+            "[fill]"));
         this.contentPane = (JPanel) this.getContentPane();
         this.contentPane.setBackground(this.getBackground());
+        LayoutManager layout = this.contentPane.getLayout();
+        if (layout instanceof MigLayout) {
+            this.migLayoutManager = (MigLayout) layout;
+        }
 
         { // compute preferred size
             Dimension preferredSize = new Dimension();

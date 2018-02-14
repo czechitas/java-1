@@ -15,7 +15,7 @@ public class HlavniOkno extends JFrame {
     JLabel labPravyHrac;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
     JPanel contentPane;
-    MigLayout layoutManager;
+    MigLayout migLayoutManager;
     int deltaX = -10;
     int deltaY = -10;
     Timer casovac;
@@ -23,7 +23,6 @@ public class HlavniOkno extends JFrame {
 
     public HlavniOkno() {
         initComponents();
-        layoutManager = (MigLayout) contentPane.getLayout();
     }
 
     private void priTiknutiCasovace(ActionEvent e) {
@@ -46,7 +45,7 @@ public class HlavniOkno extends JFrame {
                 levyHracY = contentPane.getHeight() - labLevyHrac.getHeight();
             }
         }
-        layoutManager.setComponentConstraints(labLevyHrac, "pos 10px " + levyHracY);
+        migLayoutManager.setComponentConstraints(labLevyHrac, "pos 10px " + levyHracY);
 
         int pravyHracY = labPravyHrac.getY();
         if (klavesnice.isKeyDown(KeyEvent.VK_UP)) {
@@ -61,7 +60,7 @@ public class HlavniOkno extends JFrame {
                 pravyHracY = contentPane.getHeight() - labPravyHrac.getHeight();
             }
         }
-        layoutManager.setComponentConstraints(labPravyHrac, "pos n " + pravyHracY + " 100%-10 n");
+        migLayoutManager.setComponentConstraints(labPravyHrac, "pos n " + pravyHracY + " 100%-10 n");
     }
 
     private void pohybMicku() {
@@ -88,7 +87,7 @@ public class HlavniOkno extends JFrame {
             deltaX = -deltaX;
         }
 
-        layoutManager.setComponentConstraints(labMicek, "pos " + x + " " + y);
+        migLayoutManager.setComponentConstraints(labMicek, "pos " + x + " " + y);
     }
 
     private boolean detekujKolizi(JComponent komponenta1, JComponent komponenta2) {
@@ -151,6 +150,10 @@ public class HlavniOkno extends JFrame {
             "[fill]"));
         this.contentPane = (JPanel) this.getContentPane();
         this.contentPane.setBackground(this.getBackground());
+        LayoutManager layout = this.contentPane.getLayout();
+        if (layout instanceof MigLayout) {
+            this.migLayoutManager = (MigLayout) layout;
+        }
 
         //---- labMicek ----
         labMicek.setIcon(new ImageIcon(getClass().getResource("/cz/czechitas/pingpong/micek.png")));

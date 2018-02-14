@@ -3,7 +3,6 @@ package cz.czechitas.sibenice;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import com.sun.org.apache.xpath.internal.axes.*;
 import net.miginfocom.swing.*;
 
 public class HlavniOkno extends JFrame {

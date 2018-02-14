@@ -17,6 +17,7 @@ public class HlavniOkno extends JFrame {
     // Generated using JFormDesigner non-commercial license
     // JFormDesigner - End of variables declaration  //GEN-END:variables
     JPanel contentPane;
+    MigLayout migLayoutManager;
     List<JLabel> seznamKaret;
     Icon obrazekRubuKaret;
 
@@ -82,6 +83,10 @@ public class HlavniOkno extends JFrame {
             "[grow]"));
         this.contentPane = (JPanel) this.getContentPane();
         this.contentPane.setBackground(this.getBackground());
+        LayoutManager layout = this.contentPane.getLayout();
+        if (layout instanceof MigLayout) {
+            this.migLayoutManager = (MigLayout) layout;
+        }
 
         inicializujKarty();
 

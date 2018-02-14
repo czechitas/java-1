@@ -1,4 +1,0 @@
-Manifest-Version: 1.0
-Class-Path: lib/sevecek-net-utils.jar lib/miglayout-core.jar lib/migla
- yout-swing.jar
-Main-Class: cz.czechitas.mandala.SpousteciTrida
