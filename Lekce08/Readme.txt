@@ -19,8 +19,14 @@ Ping Pong
     Vylepseni - automaticky posun micku (Timer):
     Nakonec pridame javax.swing.Timer (Pozor, v Jave je vic Timeru. Je nutne, aby to byl Swing Timer).
     Timer musime vytvorit sami, designer ho vytvorit nedokaze, protoze nema bezparametricky konstruktor.
+    (Resp. dokaze, ale je to pomerne komplikovane.)
         Tip: Vlastni tvorba Timeru muze byt klidne provedene v udalosti windowOpened.
-        Pozn: Timer je nutne inicializovat s odkazem na jiz naprogramovanou metodu actionPerformed.
-            Tip: Doporucuji nechat studentky v generovanem kodu designeru najit, kde a jak se metoda navesuje na stisk tlacitka (addActionListener). Stejny kod se pak pouzije jako parametr constructoru Timeru.
-        Tip: Komponentu Timeru lze vlozit na okno pomoci designeru, ale je nutne nastavit v tabulce vlastnosti teto pridane komponenty "Custom Creation Code". Nemyslim, ze to stoji za zmateni studentek. Je to mozne ukazat jako cimrmanovskou zapomenku a zduraznit, ze si to nemaji pamatovat :-)
+        Pozn: Timer je mozne inicializovat s odkazem na jiz naprogramovanou metodu actionPerformed nebo parametrem null a pridanim listeneru az dale v kodu pomoci addActionListener().
+        Tip: Doporucuji nechat studentky v generovanem kodu designeru najit, kde a jak se metoda navesuje na stisk tlacitka (addActionListener). Stejny kod se pak pouzije u Timeru.
+        Pozor! Metode  priOtevreniOkna(WindowEvent evt)  prejmenujte parametr  WindowEvent e  na  WindowEvent evt  aby nedoslo ke kolizi s  e -> pohybMicku(e)
 
+    private void priOtevreniOkna(WindowEvent evt) {
+        casovac = new Timer(50, null);
+        casovac.addActionListener(e -> pohybMicku(e));
+        casovac.start();
+    }

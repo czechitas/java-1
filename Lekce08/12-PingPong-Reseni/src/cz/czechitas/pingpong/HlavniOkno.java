@@ -45,8 +45,9 @@ public class HlavniOkno extends JFrame {
         labMicek.setLocation(poziceMicku);
     }
 
-    private void priOtevreniOkna(WindowEvent e) {
-        casovac = new Timer(50, it -> pohybMicku(it));
+    private void priOtevreniOkna(WindowEvent evt) {
+        casovac = new Timer(50, null);
+        casovac.addActionListener(e -> pohybMicku(e));
         casovac.start();
     }
 

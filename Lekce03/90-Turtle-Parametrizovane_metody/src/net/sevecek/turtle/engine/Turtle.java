@@ -3,13 +3,16 @@ package net.sevecek.turtle.engine;
 import java.awt.*;
 import java.awt.geom.*;
 import java.awt.image.*;
+import java.net.*;
 import javax.imageio.*;
 import javax.swing.*;
 import net.sevecek.util.*;
 
 public class Turtle {
 
-    private static final double DEGREES_TO_RADIAN_COEF = Math.PI / 180.0;
+    private static final double DEGREES_TO_RADIAN_RATIO = Math.PI / 180.0;
+    private static final String TURTLE_SPRITE_FILE_NAME = "net/sevecek/turtle/images/turtle.png";
+    private static final Color DEFAULT_PEN_COLOR = new Color(70, 70, 140);
     private double x;
     private double y;
     private double angle;
@@ -23,21 +26,25 @@ public class Turtle {
     public Turtle() {
         try {
             board = Board.getInstance(Thread.currentThread());
-            turtleSprite = ImageIO.read(this.getClass().getClassLoader().getResource("net/sevecek/turtle/images/turtle.png"));
-            angle = 0;
+            URL turtleSpriteResource = this.getClass().getClassLoader().getResource(TURTLE_SPRITE_FILE_NAME);
+            if (turtleSpriteResource == null) {
+                throw new ApplicationPublicException("Unable to load turtle image from " + TURTLE_SPRITE_FILE_NAME);
+            }
+            turtleSprite = ImageIO.read(turtleSpriteResource);
+            angle = 0.0;
             penWidth = 10;
             isPenDrawing = true;
-            color = new Color(70, 70, 140);
+            color = DEFAULT_PEN_COLOR;
             uiInitialize();
             ThreadUtils.sleep(400L);
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            throw ExceptionUtils.rethrowAsUnchecked(e);
         }
     }
 
     public double getX() {
         testPause();
-        return (int) x;
+        return x;
     }
 
     public void setX(double newValue) {
@@ -47,7 +54,7 @@ public class Turtle {
 
     public double getY() {
         testPause();
-        return (int) y;
+        return y;
     }
 
     public void setY(double newValue) {
@@ -96,8 +103,8 @@ public class Turtle {
 
     public void move(double pixels) {
         testPause();
-        double newX = x + Math.cos((angle - 90.0) * DEGREES_TO_RADIAN_COEF) * pixels;
-        double newY = y + Math.sin((angle - 90.0) * DEGREES_TO_RADIAN_COEF) * pixels;
+        double newX = x + Math.cos((angle - 90.0) * DEGREES_TO_RADIAN_RATIO) * pixels;
+        double newY = y + Math.sin((angle - 90.0) * DEGREES_TO_RADIAN_RATIO) * pixels;
         animateDrawing(x, y, angle, pixels);
         setLocation(newX, newY);
     }
@@ -153,63 +160,68 @@ public class Turtle {
     //-------------------------------------------------------------------------
 
     private void animateRotation(double originalAngle, double newAngle) {
-        long duration = (long) ((Math.abs(newAngle - originalAngle) / 360.0) / board.getRotationSpeed() * 1000.0);
-        long startTime = System.currentTimeMillis();
-        long currentTime = startTime;
-        long endTime = startTime + duration;
-        double lastPercent = 0.0;
-        while (currentTime < endTime) {
-            duration = (long) ((Math.abs(newAngle - originalAngle) / 360.0) / board.getRotationSpeed() * 1000.0);
-            endTime = startTime + duration;
+        if (Math.abs(originalAngle - newAngle) > 25.0) {
+            long duration = (long) ((Math.abs(newAngle - originalAngle) / 360.0) / board.getRotationSpeed() * 1000.0);
+            long startTime = System.currentTimeMillis();
+            long currentTime = startTime;
+            long endTime = startTime + duration;
+            double lastPercent = 0.0;
+            while (currentTime < endTime) {
+                duration = (long) ((Math.abs(newAngle - originalAngle) / 360.0) / board.getRotationSpeed() * 1000.0);
+                endTime = startTime + duration;
 
-            double percent = (double) (currentTime - startTime) / duration;
-            if (percent >= 1.0) {
-                percent = 1.0;
+                double percent = (double) (currentTime - startTime) / duration;
+                if (percent >= 1.0) {
+                    percent = 1.0;
+                }
+                if (percent < lastPercent) {
+                    percent = lastPercent;
+                }
+                lastPercent = percent;
+                angle = originalAngle + (newAngle - originalAngle) * percent;
+                uiDrawRotatedTurtle(angle);
+                ThreadUtils.sleep(5L);
+                currentTime = System.currentTimeMillis();
             }
-            if (percent < lastPercent) {
-                percent = lastPercent;
-            }
-            lastPercent = percent;
-            angle = originalAngle + (newAngle - originalAngle) * percent;
-            uiDrawRotatedTurtle(angle);
-            ThreadUtils.sleep(5L);
-            currentTime = System.currentTimeMillis();
         }
         uiDrawRotatedTurtle(newAngle);
     }
 
     private void animateDrawing(double oldX, double oldY, double angle, double length) {
-        double targetX = oldX + Math.cos((angle - 90.0) * DEGREES_TO_RADIAN_COEF) * length;
-        double targetY = oldY + Math.sin((angle - 90.0) * DEGREES_TO_RADIAN_COEF) * length;
-
-        long duration = (long) (length / 100.0 / board.getSpeed() * 1000.0);
-        long startTime = System.currentTimeMillis();
-        long currentTime = startTime;
-        long endTime = startTime + duration;
+        double targetX = oldX + Math.cos((angle - 90.0) * DEGREES_TO_RADIAN_RATIO) * length;
+        double targetY = oldY + Math.sin((angle - 90.0) * DEGREES_TO_RADIAN_RATIO) * length;
         UiLineAnimator uiLineAnimator = new UiLineAnimator(oldX, oldY, targetX, targetY);
-        double lastPercent = 0.0;
-        while (currentTime < endTime) {
-            duration = (long) (length / 100.0 / board.getSpeed() * 1000.0);
-            endTime = startTime + duration;
 
-            double percent = (double) (currentTime - startTime) / duration;
-            if (percent >= 1.0) {
-                percent = 1.0;
+        if (length > 20.0) {
+            long duration = (long) (length / 100.0 / board.getSpeed() * 1000.0);
+            long startTime = System.currentTimeMillis();
+            long currentTime = startTime;
+            long endTime = startTime + duration;
+            double lastPercent = 0.0;
+            while (currentTime < endTime) {
+                duration = (long) (length / 100.0 / board.getSpeed() * 1000.0);
+                endTime = startTime + duration;
+
+                double percent = (double) (currentTime - startTime) / duration;
+                if (percent >= 1.0) {
+                    percent = 1.0;
+                }
+                if (percent < lastPercent) {
+                    percent = lastPercent;
+                }
+                lastPercent = percent;
+                double currentLength = length * percent;
+                double newX = oldX + Math.cos((angle - 90.0) * DEGREES_TO_RADIAN_RATIO) * currentLength;
+                double newY = oldY + Math.sin((angle - 90.0) * DEGREES_TO_RADIAN_RATIO) * currentLength;
+                if (isPenDrawing()) {
+                    uiLineAnimator.uiDrawLine(newX, newY);
+                }
+                uiDrawTurtleOnLocation(newX, newY);
+                ThreadUtils.sleep(5L);
+                currentTime = System.currentTimeMillis();
             }
-            if (percent < lastPercent) {
-                percent = lastPercent;
-            }
-            lastPercent = percent;
-            double currentLength = length * percent;
-            double newX = oldX + Math.cos((angle - 90.0) * DEGREES_TO_RADIAN_COEF) * currentLength;
-            double newY = oldY + Math.sin((angle - 90.0) * DEGREES_TO_RADIAN_COEF) * currentLength;
-            if (isPenDrawing()) {
-                uiLineAnimator.uiDrawLine(newX, newY);
-            }
-            uiDrawTurtleOnLocation(newX, newY);
-            ThreadUtils.sleep(5L);
-            currentTime = System.currentTimeMillis();
         }
+
         if (isPenDrawing()) {
             uiLineAnimator.uiFinalDrawLine(targetX, targetY);
         }
@@ -233,7 +245,10 @@ public class Turtle {
 
     private void uiDrawRotatedTurtle(double angle) {
         Board.invokeAndWait(() -> {
-            AffineTransform tx = AffineTransform.getRotateInstance(angle * DEGREES_TO_RADIAN_COEF, turtleSprite.getWidth() / 2.0, turtleSprite.getHeight() / 2.0);
+            AffineTransform tx = AffineTransform.getRotateInstance(
+                    angle * DEGREES_TO_RADIAN_RATIO,
+                    turtleSprite.getWidth() / 2.0,
+                    turtleSprite.getHeight() / 2.0);
             AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_BICUBIC);
             BufferedImage newTurtleSprite = op.filter(turtleSprite, null);
             turtleVisualComponent.setIcon(new ImageIcon(newTurtleSprite));
@@ -243,17 +258,19 @@ public class Turtle {
 
     private void uiDrawTurtleOnLocation(double newX, double newY) {
         Board.invokeAndWait(() -> {
-            turtleVisualComponent.setLocation((int) (newX - turtleSprite.getWidth() / 2),
+            turtleVisualComponent.setLocation(
+                    (int) (newX - turtleSprite.getWidth() / 2),
                     (int) (newY - turtleSprite.getHeight() / 2));
         });
     }
+
+    private static Raster backupRaster;
 
     private class UiLineAnimator {
 
         private double oldX;
         private double oldY;
         private BufferedImage painting;
-        private Raster backupRaster;
         private Graphics2D graphics;
 
         public UiLineAnimator(double oldX, double oldY, double newX, double newY) {
@@ -264,8 +281,10 @@ public class Turtle {
             graphics = (Graphics2D) painting.getGraphics();
             graphics.setColor(color);
             graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-            graphics.setStroke(new BasicStroke(penWidth, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
-            backupRaster = painting.getData();
+            graphics.setStroke(new BasicStroke((float) penWidth, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+            if (backupRaster == null) {
+                backupRaster = painting.getData();
+            }
         }
 
         public void uiDrawLine(double newX, double newY) {
@@ -278,6 +297,7 @@ public class Turtle {
             Board.invokeAndWait(() -> {
                 painting.setData(backupRaster);
                 graphics.drawLine((int) oldX, (int) oldY, (int) newX, (int) newY);
+                backupRaster = painting.getData();
                 board.repaint();
             });
         }

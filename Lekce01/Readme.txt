@@ -11,7 +11,8 @@ Nakonec je zahrivaci priklad Bublanina (ve stylu skladani Blockly).
 
 Priklady:
 --------
-Bublanina - nejprve studentky ve ctyrclennych tymech poskladaji papirovou skladacku, vyfoti si ji a potom ji prepisou do pocitace v editoru IntelliJ IDEA. Skladani typicky zabere 20 minut, prepis 10-15 minut.
+Bublanina - nejprve studentky ve ctyrclennych tymech poskladaji papirovou skladacku, vyfoti si ji a potom ji prepisou do pocitace v editoru IntelliJ IDEA. Skladani typicky zabere 20-30 minut,
+prepis 10-15 minut.
 Program v Jave validuje spravne upeceni bublaniny (se vsemi prisadami, spravne casove intervaly, poradi atd.). Takze se pripadne muze stat, ze papirove slozena skladacka byla vlastne spatne. Ale to nevadi - studentky se z toho muzou poucit, ze program se na prvni pokus nenapise spravne.
 
 Pokud by se nestihla skladacka prepsat do pocitace v hodine, je vhodne to zadat za domaci ukol.
