@@ -1,0 +1,90 @@
+body {
+	font-family: 'Titillium Web', sans-serif;
+	background-color: #fcf2fa;
+	margin: 0;
+	padding: 0;
+}
+p, h1, h2, h3, table{
+	margin: 0;
+	padding: 0;
+}
+.clear {
+	clear: both;
+	height: 0px;
+}
+.normal{
+	font-weight: normal;
+}
+#header{
+	background-color: #c5308a;	
+}
+#content-wrap{
+	width: 100%;
+	max-width: 1240px;	
+	margin: 0 auto;
+}
+#footer-wrap{
+	background: #c5308a;
+}
+#footer{
+	width: 100%;
+	max-width: 1240px;
+	display: block;
+	margin: 0 auto;
+	padding: 1px;
+	text-align: right;
+	font-size: 12px;
+	font-family: 'Titillium Web', sans-serif;
+	color: #fcf2fa;
+	clear: both;
+}
+h1 {
+	font-family: 'Titillium Web', sans-serif;
+	font-size: 36px;
+	font-weight: normal;
+	margin: 0 auto;
+	padding: 20px;
+	display: block;
+	width: 100%;
+	max-width: 1240px;
+	text-align: center;
+}
+#content h2{
+	display: block;
+	width: 100%;
+	max-width: 1240px;
+	background: #c5308a;
+	margin: 40px 0 0 0;
+	padding: 5px;
+	font-size: 20px;
+	clear: both;
+}
+#content h3{
+	margin: 16px 0 0 25px;
+	font-size: 16px;
+	color: #c5308a;
+	clear: both;
+}
+#content table {
+	margin-left: 50px;
+	font-size: 14px;
+	width: 100%;
+}
+.navrTyp{
+	width: 115px;
+	font-size: 12px;
+	font-family: 'Lekton', "Courier New", Courier, monospace;
+}
+.metoda{
+	width: 340px;
+	font-family: 'Lekton', "Courier New", Courier, monospace;
+	vertical-align: top;
+}
+.popisMetody{
+	max-width: 695px;
+	vertical-align: top;
+}
+.fialova {
+	color: #c5308a;
+	font-family: 'Titillium Web', sans-serif;
+}
