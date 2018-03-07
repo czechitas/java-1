@@ -127,17 +127,27 @@ Následujte tento postup:
     [Java-Training.zip](http://javabrno.czechitas.cz/install/2018-jaro/install-community/Java-Training.zip).
     Soubor se začne stahovat. Průběh lze sledovat například v horním tlačítku Stahování (Downloads).
 
-	![](mac-00_web.png)
-
 1. Až bude soubor stažený, automaticky se rozbalí. Podívejte se do složky **Stažené soubory (Downloads)**. Pokud byste
     ve složce Stažené soubory (Downloads) viděli pouze archiv Java-Training.zip, dvojím kliknutím jej rozbalte.
 
-	![](mac-01_downloads.png)
+	![](mac-01_unzip.png)
 
 1. Přesuňte složku **Java-Training** do své domovské složky. Domovská složka je **/Users/VAŠE_UŽIVATELSKÉ_JMÉNO**. Tedy
-    například **/Users/student**.
+    například **/Users/student**. Do domovské složky se lze dostat ve Finderu volbou z menu **Jdi -> Domov** (**Go ->
+    Home**).
 
-	![](mac-02_unzip.png)
+	![](mac-02_go_home.png)
+
+    Přesun ze Stahování (Downloads) do domovské složky:
+
+	![](mac-03_move.png)
+
+    Celý obsah tak bude ve složce **/Users/VAŠE_UŽIVATELSKÉ_JMÉNO/Java-Training** a bude vypadat takto:
+
+	![](mac-04_result.png)
+
+    Je nezbytně nutné mít vše právě v **/Users/VAŠE_UŽIVATELSKÉ_JMÉNO/Java-Training**. V jiné složce (například na ploše
+    nebo ve vaší složce Dokumenty) aplikace nebudou fungovat.
 
 1. Ve složce **Java-Training** uvnitř svého domovského adresáře poklepáním spuťte instalační soubor
     **ideaIC-2016.3.7.dmg** a přetažením nainstalujte IntelliJ IDEA do složky Aplikace (Applications).
@@ -163,28 +173,43 @@ Následujte tento postup:
 1. Ve složce Aplikace (Applications) **pravým tlačítkem** klikněte na IntelliJ IDEA a vyberte Zobrazit obsah (Show
     Package Contents).
 
-	![](mac-09_idea_folder_open.png)
+    Poznámka: IntelliJ IDEA bylo nutné nejprve spustit (a zase ukončit) a až potom zobrazit obsah, protože macOS při
+    prvním spuštění zkontroluje digitální podpis aplikace. Při dalších spuštěních již ne, a proto nyní můžeme přistoupit
+    ke změně nastavení (viz další kroky).
 
-1. Nyní se proklikejte do složky **Contents/bin**, poklepáním otevřete konfigurační soubor **idea.properties** a na
-    konec přidejte následující dva řádky:
+	![](mac-05_idea_show_package_contents.png)
 
-        idea.config.path=~/Java-Training/IntelliJ-Community-Profile/config
-        idea.system.path=~/Java-Training/IntelliJ-Community-Profile/system
+1. Nyní se proklikejte do složky **Contents/bin**, poklepáním otevřete konfigurační soubor **idea.properties**. Otevřete
+    ho pomocí textového editoru (TextEdit nebo TextMate).
 
-    **Pozor!** v závislosti na nastavení vašeho systému se soubor může otevřít v jiném textovém editoru. V případě, že
-	se soubor nebude chtít otevřít v žádné aplikaci, vyberte TextEdit.
+	![](mac-06_idea_folder_open.png)
+
+    Pokud se vás bude operační systém ptát, kterou aplikaci použít pro otevření, zvolte Choose Application.
+
+	![](mac-07_idea_open_unknown.png)
+
+    Zvolte aplikaci TextEdit nebo TextMate.
+
+	![](mac-08_idea_open_textmate.png)
+
+1. Na konec souboru idea.properties přidejte následující řádky:
+
+        idea.config.path=~/Java-Training/User-Config/IntelliJ-Community/config
+        idea.plugins.path=~/Java-Training/User-Config/IntelliJ-Community/config/plugins
+        idea.system.path=~/Java-Training/User-Config/IntelliJ-Community/system
+        idea.log.path=~/Java-Training/User-Config/IntelliJ-Community/system/log
 
 	![](mac-10_idea_community_config_change.png)
 
 1. Uložte změny v konfiguračním souboru.
 
-	![](mac-11_idea_community_config_save.png)
+	![](mac-11_idea_config_save.png)
 
 1.  Zkuste si ještě pustit ukázkovou aplikaci, ať ověříte, že máte správně nainstalovanáno.
 
     Ze složky Aplikace (Applications) poklepáním spusťte editor IntelliJ IDEA.
 
-	![](mac-12_idea_open.png)
+	![](mac-04_idea_open.png)
 
 1. Zvolte Otevřít (Open).
 
