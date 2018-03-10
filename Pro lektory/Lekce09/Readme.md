@@ -1,8 +1,11 @@
+Lekce 9
+=======
+
 Cil lekce:
 ---------
-Napsat si vlastni malou hru Pong
-Pochopit JKeyboard
-Detekce kolizi
+- Napsat si vlastni malou hru Pong
+- Pochopit JKeyboard
+- Detekce kolizi
 
 
 Priklady:
