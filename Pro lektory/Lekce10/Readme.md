@@ -1,3 +1,6 @@
+Lekce 10
+=======
+
 Cil hodiny:
 ----------
 Dotazy studentek

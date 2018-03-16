@@ -1,3 +1,6 @@
+Lekce 4
+=======
+
 Zde se projevila krize rozporu mezi zkusenejsimi studentkami a uplnymi zacatecnicemi.
 Rozhodli jsme se lekci rozdelit na 2 skupiny.
 Pomalejsi skupina probirala Uvod do programovani v Jave + otazky a odpovedi na prani.
