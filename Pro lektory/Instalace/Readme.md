@@ -5,7 +5,7 @@ Vsechny programy v instalaci jsou v 1 slozce Java-Training
     - na Windows C:\Java-Training
     - na Macu ~/Java-Training
         - Na Macu je vyjimkou IntelliJ IDEA, ktera se instaluje klasicky, aby byla ve slozce Applications, protoze uzivatele jsou na to zvykli
-        - Pro tyto ucely jsem jeji instalacni slozku prejmenoval z IntelliJ IDEA CE.app na IntelliJ IDEA - Community -Java-Training.app
+        - Pro tyto ucely jsem jeji instalacni slozku prejmenoval z IntelliJ IDEA CE.app na IntelliJ IDEA - Community - Java-Training.app
 
 
 Podminky, podle kterych byla instalacka sestavena (od nejdulezitejsiho po nejmene dulezite):
@@ -51,6 +51,7 @@ IntelliJ IDEA
             Nainstalovany JFormDesigner 6.0.2
         Predkonfigurovany Maven
             Path Macros
+                <macro name="JAVATRAINING" value="C:/Java-Training" />
                 <macro name="M2_HOME" value="C:/Java-Training/Maven" />
                 <macro name="M2_REPOSITORY" value="C:/Java-Training/Libraries" />
                 <macro name="M2_USER_HOME" value="C:/Java-Training/User-Config/.m2" />
@@ -63,6 +64,7 @@ IntelliJ IDEA
 
     Zmeny nutne pro provoz:
         Updaty IntelliJ IDEA vypnuty (nutne kvuli nerozbiti instalace)
+        Vypnuti klavesove zkratky Alt+. (Custom folding) kvuli ceske klavesnici
         Project default
             Exclude *.jfd z resources ... *.jfd je konfiguracni soubor JFormDesigneru
                 <entry name="!?*.jfd" />
@@ -84,6 +86,22 @@ IntelliJ IDEA
             <option name="ARE_LINE_NUMBERS_SHOWN" value="true" />
             <option name="IS_CAMEL_WORDS" value="true" />
             <option name="SHOW_PARAMETER_NAME_HINTS" value="false" />
+                ... zrusi strasne matouci zobrazovani jmen parametru ve zdrojovem textu
+            <option name="COMPLETION_CASE_SENSITIVE" value="2" />
+                ... naseptavani bez ohledu na velikost pismen
+            <option name="ADD_UNAMBIGIOUS_IMPORTS_ON_THE_FLY" value="true" />
+                ... automaticke pridavani importu u trid, ktere jsou jednoznacne. Odstrani otravnou modrou bublinu "Alt+Enter to import"
+            <EXCLUDED_PACKAGE NAME="java.awt.List" />
+            <EXCLUDED_PACKAGE NAME="javax.activation" />
+            <EXCLUDED_PACKAGE NAME="javax.swing.tree.RowMapper" />
+                ... zakaze nepouzivane tridy, aby nebyl problem s List, DataSource a RowMapper
+            <option name="ADD_IMPORTS_ON_PASTE" value="1" />
+                ... samo pridava importy pri copy+paste z cizi aplikace, pokud jsou jednoznacne
+            <component name="CodeFoldingSettings">
+                <option name="COLLAPSE_IMPORTS" value="false" />
+                <option name="COLLAPSE_FILE_HEADER" value="false" />
+            </component>
+                .. zadne collapsovani bloku. pro zacatecniky je to matouci
         Volba po otevreni projektu v IDE:
             <option name="hideEmptyPackages" value="false" />   ... zaridi, ze bude vzdy videt cela slozkova struktura baliku, ne collapsovane baliky cz.czechitas.nazevappky   (z didaktickych duvodu)
         Setter template
@@ -98,7 +116,7 @@ IntelliJ IDEA
         Live Template
             main nebo psvm pro rozbaleni public static void main()
             Jeste nejake dalsi?
-        Vlastni keymap (pouze pridana klavesova zkratka pro zavreni projektu Ctrl+Alt+Shift+F4)
+        Vlastni keymap (pridana klavesova zkratka pro zavreni projektu Ctrl+Alt+Shift+F4)
         Prenastaveny editor:
             <option name="IS_VIRTUAL_SPACE" value="true" />
         Ide.general settings
