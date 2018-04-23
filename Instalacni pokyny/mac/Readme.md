@@ -107,12 +107,12 @@ Zkušené uživatelky mohou přeskočit k krátkému [popisu](#kratky), ale dopo
     
     ![](img/screenshot25.png)
 
-26. ![](img/screenshot26.png)
-
-27. Před skutečným spuštěním IntelliJ IDEA je nutné jí přenastavit
+26. Před skutečným spuštěním IntelliJ IDEA je nutné jí přenastavit
     umístění konfiguračních souborů v `idea.properties`.
-    
-    ![](img/screenshot27.png)
+        
+    ![](img/screenshot26.png)
+
+27. ![](img/screenshot27.png)
 
 28. Klikněte pravým tlačítkem na idea.properties a vyberte Open With -> Other
 
@@ -138,113 +138,129 @@ Zkušené uživatelky mohou přeskočit k krátkému [popisu](#kratky), ale dopo
 
 33. ![](img/screenshot33.png)
 
-34. ![](img/screenshot34.png)
+34. Dále je potřeba změnit v konfiguraci IntelliJ IDEA zástupné znaky pro cesty do vaší uživatelské složky.
+    
+    ![](img/screenshot34.png)
+
+33. ![](img/screenshot35.png)
+
+33. ![](img/screenshot36.png)
+
+33. Najděte si soubor `/Users/VAŠE_UŽIVATELSKÉ_JMÉNO/Java-Training/User-Config/IntelliJ-Community/config/options/path.macros.xml`.
+    
+    ![](img/screenshot37.png)
+
+33. Klikněte na něj pravým tlačítkem a zvolte Open With -> Text Edit
+
+    ![](img/screenshot38.png)
+
+33. ![](img/screenshot39.png)
+
+33. Pojďte zpátky do Finderu
+        
+    ![](img/screenshot40.png)
+
+33. ![](img/screenshot41.png)
+
+33. ![](img/screenshot42.png)
+
+33. Ověřte, jak **přesně** se jmenuje vaše uživatelská složka. Na demonstračním snímku je to `student`.
+    
+    ![](img/screenshot43.png)
+
+33. Nyní je potřeba v konfiguračním souboru změnit zástupný text `tvoje_uzivatelska_slozka`
+    za skutečný název složky. 
+
+    ![](img/screenshot44.png)
+
+33. Na vašem počítači to NEBUDE `student`, ale jméno v záhlaví Finderu!
+
+    ![](img/screenshot45.png)
+
+33. Změny uložte a editor ukončete
+    
+    ![](img/screenshot46.png)
+
+33. ![](img/screenshot47.png)
+
+34. ![](img/screenshot48.png)
 
 35. Odpojete (Eject) instalační médium `IntelliJ Community - Java-Training` (`ideaIC-2016.3.7.1.dmg`).
 
-    ![](img/screenshot35.png)
+    ![](img/screenshot49.png)
 
 36. Virtuální disk zmizí jak z *Finderu*, tak z plochy
 
-    ![](img/screenshot36.png)
+    ![](img/screenshot50.png)
 
 37. Nyní již můžete IntelliJ IDEA - Community - Java-Training 
     normálně spustit.
     
-    ![](img/screenshot37.png)
+    ![](img/screenshot51.png)
 
-38. ![](img/screenshot38.png)
+38. ![](img/screenshot52.png)
 
-39. ![](img/screenshot39.png)
+39. ![](img/screenshot53.png)
 
 40. Tentokrát přijměte podmínky JetBrains.
 
-    ![](img/screenshot40.png)
+    ![](img/screenshot54.png)
 
-41. ![](img/screenshot41.png)
-
-42. Před otevřením projektů je potřeba změnit nastavení cest pro Maven v IntelliJ IDEA.
-
-    ![](img/screenshot42.png)
-
-43. ![](img/screenshot43.png)
-
-43. ![](img/screenshot44.png)
-
-43. Změňte `$USER_HOME$` na cestu k vaší uživatelské složce 
-    `/Users/VAŠE_UŽIVATELSKÉ_JMÉNO`.
- 
-    ![](img/screenshot45.png)
-
-43. Tuto hodnotu můžete vidět v horním záznamu `MAVEN_REPOSITORY`. 
-    Podobně jako na obrázku. Jen tam nebude `student`.
-
-    ![](img/screenshot46.png)
-    
-43. ![](img/screenshot47.png)
-
-43. ![](img/screenshot48.png)
-
-43. Stejným způsobem opravte i ostatní `$USER_HOME$`
-
-    ![](img/screenshot49.png)
-
-43. Změny potvrďte
-
-    ![](img/screenshot50.png)
+41. ![](img/screenshot55.png)
 
 42. Otevřete Demo Application.
 
-    ![](img/screenshot51.png)
+    ![](img/screenshot56.png)
 
-43. ![](img/screenshot52.png)
+43. ![](img/screenshot57.png)
 
-44. ![](img/screenshot53.png)
+44. ![](img/screenshot58.png)
 
 45. Počkejte, než IntelliJ IDEA po prvním spuštění naindexuje Javu.
     Může to trvat několik minut.
 
-    ![](img/screenshot54.png)
+    ![](img/screenshot59.png)
 
-46. ![](img/screenshot55.png)
+46. ![](img/screenshot60.png)
 
-47. Správně nastavená IntelliJ IDEA obarvuje zdrojový text v Main.java do modrofialova stejně,
-    jak je vidět v prostředku na obrázku:
-    ![](img/screenshot56.png)
+47. Správně nastavená IntelliJ IDEA obarvuje zdrojový text v Main.java do modrofialova.
+    Je to vidět v prostředku na obrázku:
+    ![](img/screenshot61.png)
     
-    Pokud naopak zůstal zdrojový text povětšinou černý, je to chyba.
+    Pokud by **zůstal zdrojový text** povětšinou **černý**, je to **chyba**.
     Buď zkuste provést pokyny ještě jednou nebo to nechte tak
     a pomůžeme vám osobně na lekci.
+    Každopádně dál nepokračujte a nespouštějte ukázkovou aplikaci, dokud nebudou texty modrofialové.
 
 48. Nakonec spusťte ukázkovou aplikaci
 
-    ![](img/screenshot57.png)
+    ![](img/screenshot62.png)
 
 49. Pokud vidíte tento nápis, instalace je hotová. 
 
-    ![](img/screenshot58.png)
+    ![](img/screenshot63.png)
 
 
 ### Úklid dočasných souborů 
-Po instalaci je nepovinně možno vymazat dočasné soubory, aby nezabíraly místo.
+Pokud vše dopadlo podle obrázku "It works", je nepovinně možno vymazat dočasné soubory instalace, aby nezabíraly místo.
 
-50. ![](img/screenshot59.png)
+50. ![](img/screenshot64.png)
 
 51. Smažte instalační medium `ideaIC-2016.3.7.1.dmg`.
     
-    ![](img/screenshot60.png)
+    ![](img/screenshot65.png)
 
-52. ![](img/screenshot61.png)
+52. ![](img/screenshot66.png)
 
-53. ![](img/screenshot62.png)
+53. ![](img/screenshot67.png)
 
 54. Smažte arcvhív `Java-Training.zip` a složku `Java-Training` v `Downloads`.
 
-    ![](img/screenshot63.png)
+    ![](img/screenshot68.png)
 
-55. ![](img/screenshot64.png)
+55. ![](img/screenshot69.png)
 
-56. ![](img/screenshot65.png)
+56. ![](img/screenshot70.png)
 
 
 ### A to je vše. Tešíme se na vás na akci.
@@ -301,21 +317,19 @@ Na kurzu budete potřebovat Javu (JDK) a programátorský editor IntelliJ IDEA (
     Je nutné nastavit právě tyto konfigurační soubory,
     jinak by nešly otevírat materiály z kurzu.
 
-7.  Spusťte `IntelliJ IDEA - Community - Java-Training` a přenastavte cesty k Mavenu:
+7.  Dále je nutné změnit zástupné cesty uvnitř konfiguračních souborů IntelliJ IDEA.
+    Najdete je v `/Users/VAŠE_UŽIVATELSKÉ_JMÉNO/Java-Training/User-Config/IntelliJ-Community/config/options/path.macros.xml`
 
-    Configure -> Preferences -> Appearance & Behaviour -> Path Variables
     ~~~~
-    M2_HOME                $USER_HOME/Maven
-    M2_REPOSITORY          $USER_HOME/Libraries
-    M2_USER_HOME           $USER_HOME/User-Config/.m2
+    JAVATRAINING           /Users/VAŠE_UŽIVATELSKÉ_JMÉNO/Java-Training
+    M2_HOME                /Users/VAŠE_UŽIVATELSKÉ_JMÉNO/Java-Training/Maven
+    M2_REPOSITORY          /Users/VAŠE_UŽIVATELSKÉ_JMÉNO/Java-Training/Libraries
+    M2_USER_HOME           /Users/VAŠE_UŽIVATELSKÉ_JMÉNO/Java-Training/User-Config/.m2
+    MAVEN_REPOSITORY       /Users/VAŠE_UŽIVATELSKÉ_JMÉNO/Java-Training/Libraries
     ~~~~
-    Změňte zástupný znak `$USER_HOME$` na `/Users/VAŠE_UŽIVATELSKÉ_JMÉNO`.
+    Změňte zástupný znak `VAŠE_UŽIVATELSKÉ_JMÉNO` na vaše skutečné jméno složky.
     Toto umístění je specifické pro váš počítač, proto je nutné to udělat ručně.
      
-    Pokud byste zde neviděly klíče `M2_HOME`, `M2_REPOSITORY` ani `M2_USER_HOME`
-    nejspíš jste nenastavily správně cesty ke konfiguračním souborům IntelliJ IDEA
-    (viz [tento bod](#config)).
-
 8.  Otevřete ukázkový projekt v
     `/Users/VAŠE_UŽIVATELSKÉ_JMÉNO/Java-Training/Projects/DemoApplication`.
 
