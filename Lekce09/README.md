@@ -63,8 +63,8 @@ Pár tipů:
 
 ### Odevzdání domácího úkolu
 
- Domácí úkol (složky s projekty) zabalte pomocí 7-Zipu pod jménem **Ukol09-Vase_Jmeno.7z**. (Případně lze použít prostý
- zip, například na Macu). Takto vytvořený archív nahrajte na Google Drive do složky Ukol09.
+Domácí úkol (složky s projekty) zabalte pomocí 7-Zipu pod jménem **Ukol09-Vase_Jmeno.7z**. (Případně lze použít prostý
+zip, například na Macu). Takto vytvořený archív nahrajte na Google Drive do složky Ukol09.
 
 Vytvořte snímek obrazovky spuštěného programu a pochlubte se s ním v galerii na Facebooku.
 
