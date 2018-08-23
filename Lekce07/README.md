@@ -163,19 +163,7 @@ V první fázi neřešte načítání a ukládání jiných souborů než oné 1
 V odevzdávárně ve složce Ukol07 je nahrané moje řešení i s zdrojovými texty. Můžete ho využít, když nebudete vědět kudy
 kam. Ale pokud to půjde bez něj, bude to výrazně lepší.
 
-### Část 2 - Distribuce programu
-
-Opravte si soubor **váš_projekt/res/META-INF/MANIFEST.MF** tak, aby správně odkazoval knihovny MigLayout. Potom začne
-fungovat výroba distribuční složky **váš_projekt/dist** během překladu (spouštění) aplikace.
-
-    Manifest-Version: 1.0
-    Class-Path: lib/sevecek-net-utils.jar lib/miglayout-core.jar lib/miglayout-swing.jar
-    Main-Class: com.example.mandala.SpousteciTrida
-
-Po opravě zkuste spustit program normálně z IntelliJ IDEA a potom vykopírovat složku **dist** na plochu a spustit buď
-**Spustit-Windows.bat** nebo **Spustit-Mac.command** přímo na ploše bez IntelliJ IDEA.
-
-### Část 3 - Příprava vlastní mandaly
+### Část 2 - Příprava vlastní mandaly
 
 Mandal je na internetu spousta. Najděte nebo si nakreslete jednu vlastní. Mandala akorát musí být striktně
 černo-bílá. Pouze dvě barvy! Pro příklad vyjděme třeba z této alternativní mandaly:
@@ -192,7 +180,7 @@ znovu zvolte Image -> Increase Color Depth... a zvolte 16,7 M barev.
 Rozumná velikost mandaly je 640x640 bodů, ale můžete použít i jinak velké obrázky. IrfanView umí obrázky i zvětšovat a
 zmenšovat. Vyzkoušejte a uvidíte samy.
 
-Nepovinná část 4 - Nahrávání a ukládání obrázků
+### Nepovinná část 3 - Nahrávání a ukládání obrázků
 
 Bylo by fajn přidat klasické menu a do něj možnost uložit a nahrát libovolný obrázek. Inspirujte se vzorovým řešením.
 
