@@ -8,10 +8,13 @@ Cíl lekce
 - Rozchození instalace.
 - Zahřívací příklad Bublanina (ve stylu skladani Blockly).
 
-Na první hodině je vhodné mít větší počet koučů než v průběhu kurzu. Je vhodné mít zkušené macOSaře a Windowsáře,
-protože holky budou mít problémy s instalací bez ohledu na to, jak blbuvzdorný návod připravíme (nedodržování návodu je
-bohužel běžné). Nicméně mám vyzkoušeno, že s detailně připraveným a odzkoušeným návodem se screenshoty pro všechny
-podporované platformy se z hodiny nestane install-fest a dá se to zvládnout během 10 až 15 minut.
+Na první hodině je vhodné mít větší počet koučů než v průběhu kurzu.
+Je vhodné mít zkušené macOSaře a Windowsáře,
+protože holky budou mít problémy s instalací bez ohledu na to,
+jak blbuvzdorný návod připravíme (nedodržování návodu je bohužel běžné).
+Nicméně mám vyzkoušeno, že s detailně připraveným a odzkoušeným návodem
+se screenshoty pro všechny podporované platformy
+se z hodiny nestane install-fest a dá se to zvládnout během 10 až 15 minut.
 
 Instalace
 ---------

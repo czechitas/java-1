@@ -23,3 +23,5 @@ Sablona projektu User Defined -> Java Window App
 - JKeyboard
 - SwingExceptionHandler
 - ThreadUtils.sleep();
+
+**TODO: Ke kazde lekci a ke kazde latce dodat odkazy na blogy / clanky, ktere se zabyvaji teorii k dalsimu precteni.**
