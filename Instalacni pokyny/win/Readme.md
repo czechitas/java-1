@@ -112,7 +112,7 @@ Zkušené uživatelky mohou přeskočit k krátkému [popisu](#kratky), ale dopo
 26. ![](img/screenshot26.png)
 
 27. Doporučujeme si přetáhnout na plochu zástupce pro spouštění IntelliJ IDEA.
-    Při přetahování podržte Shift, zástupce se zkopíruje (místo přesunutí).
+    Při přetahování podržte Ctrl, zástupce se zkopíruje (místo přesunutí).
     
     ![](img/screenshot27.png)
 
