@@ -6,7 +6,9 @@ Cil lekce:
 - Samostatne psat cykly a podminky v Jave
 - Instanciovat objekty z existujicich trid
 - Volat metody na objektech
-- Umet si rozlozit program do podprogramu (prozatim static metody)
+- Umet si rozlozit program do podprogramu (prozatim metody)
+
+- Spravne zavorky, odsazeni, zarovnani (Ctrl+Alt+L)
 
 
 Priklady:

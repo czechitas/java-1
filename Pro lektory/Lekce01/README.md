@@ -6,6 +6,7 @@ Cíl lekce
 
 - Představování.
 - Rozchození instalace.
+- Intro appka
 - Zahřívací příklad Bublanina (ve stylu skladani Blockly).
 
 Na první hodině je vhodné mít větší počet koučů než v průběhu kurzu.
@@ -28,12 +29,21 @@ Není úplně triviální si nastavit IntelliJ IDEA pro nejvyšší produktivitu
 
 Je silně doporučeno využít [instalaci od Kamila Ševečka](javabrno.czechitas.cz/2018-jaro/install-community/).
 
+
 Příklady
 --------
 
+### Intro appka
+
+V hodině je nutné ukázat, jak otevřít, editovat a spouštět aplikace v IntelliJ IDEA,
+aby studentky věděly, jak vyřesit domácí úkol.
+Taky stojí za to připomenout, jak se volají metody a jak se píše if, for, while.
+Studentky by již měly znát cykly a podmínky z minulých workshopů.
+
+
 ### Bublanina
 
-Nejprve studentkz v cca tříčlenných týmech poskládají papírovou skládačku, vyfotí si ji a potom ji přepíšou do počítače
+Nejprve studentky v cca 3-4členných týmech poskládají papírovou skládačku, vyfotí si ji a potom ji přepíšou do počítače
 v IntelliJ IDEA. Skládání typicky zabere 20 až 30 minut, přepis 10 až 15 minut.
 
 Program v Javě validuje správné upečení bublaniny (se všemi přísadami, správné časové intervaly, pořadí atd.). Takže se
