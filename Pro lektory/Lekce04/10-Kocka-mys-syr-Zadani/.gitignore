@@ -4,7 +4,10 @@
 # User-specific stuff:
 .idea/**/tasks.xml
 .idea/**/project-template.xml
-.idea/dictionaries
+.idea/**/workspace.xml
+.idea/**/vcs.xml
+.idea/**/inspectionProfiles/
+.idea/**/dictionaries/
 
 # Sensitive or high-churn files:
 .idea/**/dataSources/
@@ -24,6 +27,9 @@ cmake-build-release/
 
 # Mongo Explorer plugin:
 .idea/**/mongoSettings.xml
+
+## File-based project format:
+*.iws
 
 ## Plugin-specific files:
 
