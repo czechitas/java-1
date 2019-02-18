@@ -6,7 +6,7 @@ Kurz Java 1
 - MigLayout
 - JFormDesigner
 
-Instalace je na http://javabrno.czechitas.cz/2018-jaro/install-community/
+Instalace je na http://javabrno.czechitas.cz/2019-jaro/install-community/
 
 Sablona projektu User Defined -> Java Window App
 

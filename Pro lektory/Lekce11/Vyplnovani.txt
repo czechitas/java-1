@@ -1,0 +1,99 @@
+    //-------------------------------------------------------------------------
+
+    /**
+     * Vyplni <code>BufferedImage obrazek</code>
+     * na pozicich <code>int x</code>, <code>int y</code>
+     * barvou <code>Color barva</code>
+     */
+    public void vyplnObrazek(BufferedImage obrazek, int x, int y, Color barva) {
+        if (barva == null) {
+            barva = new Color(255, 255, 0);
+        }
+
+        // Zamez vyplnovani mimo rozsah
+        if (x < 0 || x >= obrazek.getWidth() || y < 0 || y >= obrazek.getHeight()) {
+            return;
+        }
+
+        WritableRaster pixely = obrazek.getRaster();
+        int[] novyPixel = new int[] {barva.getRed(), barva.getGreen(), barva.getBlue(), barva.getAlpha()};
+        int[] staryPixel = new int[] {255, 255, 255, 255};
+        staryPixel = pixely.getPixel(x, y, staryPixel);
+
+        // Pokud uz je pocatecni pixel obarven na cilovou barvu, nic nemen
+        if (pixelyMajiStejnouBarvu(novyPixel, staryPixel)) {
+            return;
+        }
+
+        // Zamez prebarveni cerne cary
+        int[] cernyPixel = new int[] {0, 0, 0, staryPixel[3]};
+        if (pixelyMajiStejnouBarvu(cernyPixel, staryPixel)) {
+            return;
+        }
+
+        vyplnovaciSmycka(pixely, x, y, novyPixel, staryPixel);
+    }
+
+    /**
+     * Provede skutecne vyplneni pomoci zasobniku
+     */
+    private void vyplnovaciSmycka(WritableRaster raster, int x, int y, int[] novaBarva, int[] nahrazovanaBarva) {
+        Rectangle rozmery = raster.getBounds();
+        int[] aktualniBarva = new int[] {255, 255, 255, 255};
+
+        Deque<Point> zasobnik = new ArrayDeque<>(rozmery.width * rozmery.height);
+        zasobnik.push(new Point(x, y));
+        while (zasobnik.size() > 0) {
+            Point point = zasobnik.pop();
+            x = point.x;
+            y = point.y;
+            if (!pixelyMajiStejnouBarvu(raster.getPixel(x, y, aktualniBarva), nahrazovanaBarva)) {
+                continue;
+            }
+
+            // Najdi levou zed, po ceste vyplnuj
+            int levaZed = x;
+            do {
+                raster.setPixel(levaZed, y, novaBarva);
+                levaZed--;
+            }
+            while (levaZed >= 0 && pixelyMajiStejnouBarvu(raster.getPixel(levaZed, y, aktualniBarva), nahrazovanaBarva));
+            levaZed++;
+
+            // Najdi pravou zed, po ceste vyplnuj
+            int pravaZed = x;
+            do {
+                raster.setPixel(pravaZed, y, novaBarva);
+                pravaZed++;
+            }
+            while (pravaZed < rozmery.width && pixelyMajiStejnouBarvu(raster.getPixel(pravaZed, y, aktualniBarva), nahrazovanaBarva));
+            pravaZed--;
+
+            // Pridej na zasobnik body nahore a dole
+            for (int i = levaZed; i <= pravaZed; i++) {
+                if (y > 0 && pixelyMajiStejnouBarvu(raster.getPixel(i, y - 1, aktualniBarva), nahrazovanaBarva)) {
+                    if (!(i > levaZed && i < pravaZed
+                            && pixelyMajiStejnouBarvu(raster.getPixel(i - 1, y - 1, aktualniBarva), nahrazovanaBarva)
+                            && pixelyMajiStejnouBarvu(raster.getPixel(i + 1, y - 1, aktualniBarva), nahrazovanaBarva))) {
+                        zasobnik.add(new Point(i, y - 1));
+                    }
+                }
+                if (y < rozmery.height - 1 && pixelyMajiStejnouBarvu(raster.getPixel(i, y + 1, aktualniBarva), nahrazovanaBarva)) {
+                    if (!(i > levaZed && i < pravaZed
+                            && pixelyMajiStejnouBarvu(raster.getPixel(i - 1, y + 1, aktualniBarva), nahrazovanaBarva)
+                            && pixelyMajiStejnouBarvu(raster.getPixel(i + 1, y + 1, aktualniBarva), nahrazovanaBarva))) {
+                        zasobnik.add(new Point(i, y + 1));
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * Vrati true pokud RGB hodnoty v polich jsou stejne. Pokud jsou ruzne, vraci false
+     */
+    private boolean pixelyMajiStejnouBarvu(int[] barva1, int[] barva2) {
+        return barva1[0] == barva2[0] && barva1[1] == barva2[1] && barva1[2] == barva2[2];
+    }
+
+    //-------------------------------------------------------------------------

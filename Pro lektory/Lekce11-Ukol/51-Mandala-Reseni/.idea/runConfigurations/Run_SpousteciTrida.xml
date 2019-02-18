@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Run SpousteciTrida" type="Application" factoryName="Application" singleton="true">
+    <option name="MAIN_CLASS_NAME" value="cz.czechitas.mandala.SpousteciTrida" />
+    <module name="java-module" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

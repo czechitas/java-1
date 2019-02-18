@@ -1,27 +1,39 @@
-Lekce 10
-=======
+Lekce10 - Udalosti
+==================
 
-Cil hodiny:
-----------
-Dotazy studentek
-Seznam objektu (budou se na nej ptat kvuli seznamu zdi z minuleho ukolu)
+Cil lekce
+---------
 
-Co je to instalace Javy, spusteni javoveho programu, editor, projekt
-Zalozeni projektu od zacatku bez sablony
+- Prevod konzolove aplikace na grafickou
+- Procvicovani udalosti
+- Informacni objekt o udalosti - `ActionEvent` a vlastnost `source`
 
 
-Poznamky:
---------
-Ukazalo se mi jako vhodne posledni domaci ukol zadat 2 tydny pred koncem. Aktivnejsi studentky domaci ukol zvladnou do predposledni lekce a je mozne speky probrat a dat tak sanci mene aktivnim studentkam si to dokoncit do posledni lekce. Po posledni lekci se na to uz zadna studentka divat nebude.
+### Poznamka:
+
+JFormDesigner a ikonky:
+JFormDesigner umi nacist obrazky z classpath.
+V dialogu vyberu souboru je ale nutno vybrat obrazek ve slozce prelozenych souboru (PROJEKT/target).
+Obrazky byste ale meli vkladat do zdrojovych souboru projektu (PROJEKT/src/main/resources).
+Aby se prekopirovaly do PROJEKT/target, je nutno projekt prelozit.
+Pak se da soubor vybrat v JFormDesigneru (protoze uz je v PROJEKT/target).
 
 
 Priklady:
---------
-Karticky pro pexeso
-    Cilem prikladu je jednak nechat studentky rucne instanciovat vizualni komponenty (JLabel s kartickou).
-    Dalsi cil je motivovat studentky, aby si zjistily, jak ovladat MigLayout bez designeru. Karticky je vhodne rozmistit do bunek pomoci cyklu.
-    Karticky (JLabely) je potreba vkladat do seznamu (List<JLabel>).
+---------
+-   Den narozeni
+    Prevod konzolove aplikace na grafickou
 
-Trida JKarta - Bonus demonstrace
-    Jak si pamatovat u kazde karticky cislo obrazku (pro porovnani dvou karet)? Doporucuji odvodit tridu JKarta extends JLabel a udelat ji constructor a getter.
-        Podobne lze resit i obrazek rubu a lice (BufferedImage nebo ImageIcon).
+### Kalkulacka
+    Predpripraveny design.
+    Pridavani cislice na display kalkulacky mackanim virtualnich klaves na obrazovce mysi.
+    Lze mit jen 1 osluznou metodu pro vsechna tlacitka a podle `(ActionEvent evt) evt.getSource()` rozhodnout,
+    ktere tlacitko se stisklo a bud z `tlacitko.getText()` vyhanout cislici nebo proste velky `if` pro 10 tlacitek.
+
+
+Videozaznam
+-----------
+
+Playlist vsech lekci z kurzu Kamila Sevecka
+*   Podzim 2017 (https://www.youtube.com/playlist?list=PLUVJxzuCt9AROpKl3Hu-DvdgQV-xHaoQY) - Lekce 06
+*   Podzim 2018 (https://www.youtube.com/playlist?list=PLTCx5oiCrIJ70H8jF9FxPs15e3_m6su80)

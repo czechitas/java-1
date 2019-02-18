@@ -1,53 +1,78 @@
-Lekce 1
-=======
+Lekce01 - Syntax Javy
+=====================
 
-Cíl lekce
+Cil lekce
 ---------
 
-- Představování.
-- Rozchození instalace.
+- Predstavovani
+- Rozchozeni instalace
 - Intro appka
-- Zahřívací příklad Bublanina (ve stylu skladani Blockly).
+- Zahrivaci priklad Bublanina (ve stylu skladani Blockly) nebo Code.org Angry Birds
 
-Na první hodině je vhodné mít větší počet koučů než v průběhu kurzu.
-Je vhodné mít zkušené macOSaře a Windowsáře,
-protože holky budou mít problémy s instalací bez ohledu na to,
-jak blbuvzdorný návod připravíme (nedodržování návodu je bohužel běžné).
-Nicméně mám vyzkoušeno, že s detailně připraveným a odzkoušeným návodem
-se screenshoty pro všechny podporované platformy
-se z hodiny nestane install-fest a dá se to zvládnout během 10 až 15 minut.
+
+Videozaznam
+-----------
+
+Playlist vsech lekci z kurzu Kamila Sevecka
+*   Podzim 2017 (https://www.youtube.com/playlist?list=PLUVJxzuCt9AROpKl3Hu-DvdgQV-xHaoQY)
+*   Podzim 2018 (https://www.youtube.com/playlist?list=PLTCx5oiCrIJ70H8jF9FxPs15e3_m6su80)
+
+
+Poznamky
+--------
+
+Na prvni hodine je vhodne mit vetsi pocet koucu nez v prubehu kurzu.
+Je vhodne mit zkusene macOSare a Windowsare,
+protoze holky budou mit problemy s instalaci bez ohledu na to,
+jak blbuvzdorny navod pripravime (nedodrzovani navodu je bohuzel bezne).
+Nicmene mam vyzkouseno, ze s detailne pripravenym a odzkousenym navodem
+se screenshoty pro vsechny podporovane platformy
+se z hodiny nestane install-fest a da se to zvladnout behem 10 az 15 minut.
+
 
 Instalace
 ---------
 
-Vřele doporučuji na začátku studentkám dodat instalaci jako předpřipravený balík předkonfigurovaných aplikací JDK +
-IntelliJ IDEA + Maven + překonfigurovaná lokální repository s předstaženými knihovnami (aby všechny studentky nemusely
-naráz stahovat z Internetu knihovny).
+Vrele doporucuji na zacatku studentkam dodat instalaci jako predpripraveny balik predkonfigurovanych aplikaci JDK +
+IntelliJ IDEA + Maven + prekonfigurovana lokalni repository s predstazenymi knihovnami (aby vsechny studentky nemusely
+naraz stahovat z Internetu knihovny).
 
-Není úplně triviální si nastavit IntelliJ IDEA pro nejvyšší produktivitu a výrazně doporučuji jim NEDÁVAT pouze předpis
-"které aplikace si mají nainstalovat", ale dodat jim to všechno již nainstalované v jednom zip archivu.
+Neni uplne trivialni si nastavit IntelliJ IDEA pro nejvyssi produktivitu a vyrazne doporucuji jim NEDAVAT pouze predpis
+"ktere aplikace si maji nainstalovat", ale dodat jim to vsechno jiz nainstalovane v jednom zip archivu.
 
-Je silně doporučeno využít [instalaci od Kamila Ševečka](javabrno.czechitas.cz/2018-jaro/install-community/).
+Muzete vyuzit [instalaci od Kamila Sevecka](https://javainstall.czechitas.cz/latest/install-community/).
 
 
-Příklady
+Priklady
 --------
 
 ### Intro appka
 
-V hodině je nutné ukázat, jak otevřít, editovat a spouštět aplikace v IntelliJ IDEA,
-aby studentky věděly, jak vyřesit domácí úkol.
-Taky stojí za to připomenout, jak se volají metody a jak se píše if, for, while.
-Studentky by již měly znát cykly a podmínky z minulých workshopů.
+V hodine je nutne ukazat, jak otevrit, editovat a spoustet aplikace v IntelliJ IDEA,
+aby studentky vedely, jak vyresit domaci ukol.
+Taky stoji za to pripomenout, jak se volaji metody a jak se pise if, for, while.
+Studentky by jiz mely znat cykly a podminky z minulych workshopu.
 
 
 ### Bublanina
 
-Nejprve studentky v cca 3-4členných týmech poskládají papírovou skládačku, vyfotí si ji a potom ji přepíšou do počítače
-v IntelliJ IDEA. Skládání typicky zabere 20 až 30 minut, přepis 10 až 15 minut.
+Nejprve studentky v cca 3-4clennych tymech poskladaji papirovou skladacku, vyfoti si ji a potom ji prepisou do pocitace
+v IntelliJ IDEA. Skladani typicky zabere 20 az 30 minut, prepis 10 az 15 minut.
 
-Program v Javě validuje správné upečení bublaniny (se všemi přísadami, správné časové intervaly, pořadí atd.). Takže se
-případně může stát, že papírově složená skládačka byla vlastně špatně. Ale to nevadí -- studentky se z toho mohou poučit,
-že program se na první pokus nenapíše správně.
+Program v Jave validuje spravne upeceni bublaniny (se vsemi prisadami, spravne casove intervaly, poradi atd.). Takze se
+pripadne muze stat, ze papirove slozena skladacka byla vlastne spatne. Ale to nevadi -- studentky se z toho mohou poucit,
+ze program se na prvni pokus nenapise spravne.
 
-Pokud by se nestihla skládačka přepsat do počítače v hodině, je vhodné to zadat za domácí úkol.
+Pokud by se nestihla skladacka prepsat do pocitace v hodine, je vhodne to zadat za domaci ukol.
+
+
+### Code.org AngryBirds (alternativa k Bublanine)
+
+V pripade, ze nemate k dispozici vytisknutou Bublaninu, muzete zadat Angry Birds.
+Tento javovy projekt vychazi z originalni pouze klikaci webove aplikace zde: https://studio.code.org/hoc/1
+Originalni webova aplikace je postavena na systemu Blockly a umoznuje pochopit cykly a podminky.
+Nicmene, protoze jsme na kurzu Javy, vytvoril jsem port dane hry do Javy.
+Levely jsou stejne, grafika je podobna.
+Ukoly jsou tedy stejne, jen je treba je naprogramovat v Jave v IntelliJ IDEA, ne vyklikat na webu.
+
+Pokud by se nestihly rozpracovani Angry Birds v hodine, je vhodne to zadat za domaci ukol.

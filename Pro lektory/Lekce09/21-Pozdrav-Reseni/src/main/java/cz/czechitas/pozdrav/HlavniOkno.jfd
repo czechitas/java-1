@@ -1,0 +1,42 @@
+JFDML JFormDesigner: "6.0.2.0.116" Java: "1.8.0_162" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+			"$layoutConstraints": "insets rel,hidemode 3"
+			"$columnConstraints": "[fill][fill][fill]"
+			"$rowConstraints": "[fill]"
+		} ) {
+			name: "this"
+			"defaultCloseOperation": 2
+			"title": "Pozdrav"
+			"$locationPolicy": 1
+			auxiliary() {
+				"JavaCodeGenerator.postInitCode": "this.contentPane = (JPanel) this.getContentPane();\nthis.contentPane.setBackground(this.getBackground());\nLayoutManager layout = this.contentPane.getLayout();\nif (layout instanceof MigLayout) {\n    this.migLayoutManager = (MigLayout) layout;\n}\n"
+			}
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "Zadejte svoje jmeno:"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 0 0"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField1"
+				"columns": 20
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 0"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				"text": "Pozdravit"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "priStiskuButton1", true ) )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 2 0"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 427, 235 )
+		} )
+	}
+}

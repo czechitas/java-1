@@ -1,0 +1,41 @@
+JFDML JFormDesigner: "6.0.2.0.116" Java: "1.8.0_162" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+			"$layoutConstraints": "insets unrel,hidemode 3"
+			"$columnConstraints": "[grow,fill]"
+			"$rowConstraints": "[][grow]"
+		} ) {
+			name: "this"
+			"defaultCloseOperation": 2
+			"title": "Kreslení"
+			"$locationPolicy": 1
+			auxiliary() {
+				"JavaCodeGenerator.postInitCode": "this.contentPane = (JPanel) this.getContentPane();\nthis.contentPane.setBackground(this.getBackground());\nLayoutManager layout = this.contentPane.getLayout();\nif (layout instanceof MigLayout) {\n    this.migLayoutManager = (MigLayout) layout;\n}\n"
+			}
+			addEvent( new FormEvent( "java.awt.event.WindowListener", "windowOpened", "priOtevreniOkna", true ) )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labTitulek"
+				"text": "Plátno:"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 0 0"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labObrazek"
+				"horizontalAlignment": 2
+				"border": new javax.swing.border.BevelBorder( 1, null, null, null, null )
+				"verticalAlignment": 1
+				"opaque": true
+				addEvent( new FormEvent( "java.awt.event.MouseMotionListener", "mouseDragged", "priKliknutiNaLabObrazek", true ) )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mousePressed", "priKliknutiNaLabObrazek", true ) )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 0 1,grow,wmin 400,hmin 300"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 451, 389 )
+		} )
+	}
+}
