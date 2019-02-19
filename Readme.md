@@ -18,6 +18,16 @@ Budeme pracovat typicky na malých hrách (Angry Birds, pexeso, a podobně). Bud
 potřeba jen dokončit chybějící kousky.
 
 
+
+Instalace
+---------
+
+Na kurz je nutné mít nainstalovanou IntelliJ IDEA - Community Edition, JDK a Maven.
+Museji byt presne nastavene, proto je **nutne** pouzit presne predpripraveny archiv
+podle navodu: http://javabrno.czechitas.cz/2019-jaro/install-community/
+
+
+
 Náplň lekcí
 -----------
 

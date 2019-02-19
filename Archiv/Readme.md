@@ -1,1 +1,1 @@
-Zde jsou stare projekty, ktere jsou ale zajimave a byla by skoda, aby skoncily v propadlisti dejin.
+Zde jsou stare projekty, u kterych by byla skoda, kdyby skoncily v propadlisti dejin.
