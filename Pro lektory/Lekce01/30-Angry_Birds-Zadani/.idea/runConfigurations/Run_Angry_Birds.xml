@@ -2,7 +2,7 @@
   <configuration default="false" name="Run Angry Birds" type="Application" factoryName="Application" singleton="true">
     <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
       <pattern>
-        <option name="PATTERN" value="cz.czechitas.angrybirds.*" />
+        <option name="PATTERN" value="cz.czechitas.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>
