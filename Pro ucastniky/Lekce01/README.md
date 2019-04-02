@@ -1,3 +1,21 @@
+Lekce 01
+========
+
+Úvod a Bublanina
+----------------
+
+### Osnova
+
+* Úvod od Czechitas
+* Java, JDK, IntelliJ IDEA
+* Intro do javových projektů (AngryRed, AngryMatilda)
+* Bublanina - skládání puzzle
+
+### Videozáznam
+
+Na YouTube se můžete podívat na [záznam z lekce](https://www.youtube.com/watch?v=CjfvqDv7EwQ),
+případně si prohlédnout [celý playlist](https://www.youtube.com/playlist?list=PLTCx5oiCrIJ70H8jF9FxPs15e3_m6su80).
+
 Úkol - Bublanina
 ----------------
 
@@ -13,7 +31,6 @@ S ním ji lze doprogramovat přímo v Javě v IntelliJ IDEA.
 Druhá, lehčí verze, je přepsat ji z následující fotky. Snažte se to ale nedělat, dokud si vážně nebudete vědět rady.
 
 [![](ukol01-bublanina-fotka-nahled.jpg)](ukol01-bublanina-fotka.jpg)
-
 
 ### Odevzdání domácího úkolu
 
