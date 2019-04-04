@@ -1,9 +1,20 @@
+Lekce 07
+========
+
+Procvičování tříd a objektů
+---------------------------
+
+### Videozáznam
+
+Na YouTube se můžete podívat na [záznam z lekce](https://www.youtube.com/watch?v=EI0cC88o2i4),
+případně si prohlédnout [celý playlist](https://www.youtube.com/playlist?list=PLTCx5oiCrIJ70H8jF9FxPs15e3_m6su80).
+
 Nepovinný úkol - Dokončení z hodiny
 -----------------------------------
 
 ### Část 1
 
-Dokončete program **Kalendar** z hodiny. 
+Dokončete program **Kalendar** z hodiny.
 Dodělejte do třídy `Datum` *get* a *set* metody pro všechny proměnné a tyto proměnné
 nastavte jako `private`. Jinými slovy, přidejte do třídy `Datum` to,
 co jste programovali v minulém domácím úkolu.
@@ -15,7 +26,7 @@ Dokončete projekt **Pexeso**, třídu `Karticka`.
 Opět nastavte vnitřní proměnné na `private` a dodělejte k nim *get* a *set* metody.
 Vynechejte *get* metodu pro `stav`. Místo ní máme metody
 `isOdebrana()`, `isRubemNahoru()`, `isLicemNahoru()`,
-které jsme programovali v hodině.    
+které jsme programovali v hodině.
 Dokončete metody `otoc()` a `odeber()` z hodiny.
   - Metoda `otoc()` změní stav z `"rub"` na `"lic"` nebo z `"lic"` na `"rub"`.
     Pokud je kartička v jiném stavu (tj. `"odebrana"`), nestane se nic.
