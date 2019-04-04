@@ -1,4 +1,15 @@
-Úkol 07 - Bankovní účty
+Lekce 08
+========
+
+Konstruktory
+------------
+
+### Videozáznam
+
+Na YouTube se můžete podívat na [záznam z lekce](https://www.youtube.com/watch?v=EfahtSUx8bE),
+případně si prohlédnout [celý playlist](https://www.youtube.com/playlist?list=PLTCx5oiCrIJ70H8jF9FxPs15e3_m6su80).
+
+Úkol - Bankovní účty
 -----------------------
 
 Stáhněte si přepřipravený projekt s domácím úkolem zde:
@@ -8,9 +19,9 @@ Stáhněte si přepřipravený projekt s domácím úkolem zde:
 ### Část 1
 
 Vytvořte třídu `BeznyUcet` podle následujícího schématu:
- 
+
 ~~~~
-public class BeznyUcet     
+public class BeznyUcet
   |
   +-- private double zustatek
   |
@@ -21,7 +32,7 @@ public class BeznyUcet
   +-- public boolean vyberPenize(double castka)
   |
   +-- public boolean vlozPenize(double castka)
-~~~~ 
+~~~~
 
 Poznámky ke třídě:
 
@@ -40,9 +51,9 @@ přijde jako vstupní parametr metody a vrátí `true`.
 
     Pokud by byla metod zavolána se zápornou částkou,
     vypište chybovou hlášku, neměňte zůstatek a vraťte `false`.
-    
+
     V případě, že jen není dostatek peněz na účtu pro výběr,
-    chybovou hlášku nevypisujte, ale zůstatek také neměňte 
+    chybovou hlášku nevypisujte, ale zůstatek také neměňte
     a vraťte `false`.
 
 - Metoda `vlozPenize(...)` k zůstatku peníze naopak přičte
@@ -62,7 +73,7 @@ BeznyUcet: Vsechny testy jsou OK
 ~~~~
 
 
- 
+
 
 
 ### Část 2
@@ -71,25 +82,25 @@ Rozšiřte třídu `BeznyUcet` o funkcionalitu *povoleného přečerpání účt
 (tzv. *debet* nebo *kontokorent*).
 
 Se zůstatkem tedy bude možné jít do záporu, ale jen do určité výše.
-Ta se dá nastavit v konstruktoru  
+Ta se dá nastavit v konstruktoru
 `public BeznyUcet(double pocatecniCastka, double limitCerpani)`,
-konkrétně parametr `limitCerpani`. 
+konkrétně parametr `limitCerpani`.
 To znamená, že metoda `getZustatek()` může vracet záporné hodnoty.
 Např. kdybychom vytvořili objekt `new BeznyUcet(1000.0, 5000.0)`,
 pak by z něj šlo vybrat až 6000 korun a po výběru by byl zůstatek
 -5000.
 
-U účtů s povoleným přečerpáním je vhodné vědět i 
+U účtů s povoleným přečerpáním je vhodné vědět i
 použitelný zůstatek, což je součet *zůstatku* a *limitu precerpani*.
 Pokud bychom např. vytvořili objekt `new BeznyUcet(800.0, 6000.0)`,
 pak metoda `getZustatek()` by vracela **800** korun,
 zatímco metoda `getPouzitelnyZustatek()` by vracela **6800** korun.
-Opravte samozřejmě metodu `vyberPenize(...)` tak, 
+Opravte samozřejmě metodu `vyberPenize(...)` tak,
 aby umožňovala jít *"do záporu"* až do výše povoleného *limitu
 přečerpání*.
 
 ~~~~
-public class BeznyUcet     
+public class BeznyUcet
   |
   +-- private double zustatek
   |
@@ -108,7 +119,7 @@ public class BeznyUcet
   +-- public boolean vyberPenize(double castka)
   |
   +-- public boolean vlozPenize(double castka)
-~~~~ 
+~~~~
 
 Abyste ověřili, že máte program správně,
 odkomentujte ve třídě `SpousteciTrida` volání druhé metody
@@ -126,12 +137,12 @@ BeznyUcet + Precerpani: Vsechny testy jsou OK
 Tato část je dobrovolná.
 Pokud by pro vás byl úkol už příliš rozsáhlý,
 smíte ji vynechat.
-Nicmnéně je velmi doporučeno zpracovat i tuto část. 
+Nicmnéně je velmi doporučeno zpracovat i tuto část.
 
 Vytvořte třídu `SporiciUcet`,
 která bude představovat sestarskou třídu k `BeznyUcet`.
 Nebude umožňovat jít do záporu (*povolené přečerpání účtu*),
-ale naopak bude evidovat *úrokovou míru* (procenta) a umožní 
+ale naopak bude evidovat *úrokovou míru* (procenta) a umožní
 jednou ročně bance vložit vypočtený úrok (peníze) na účet
 pomocí metody `vypocitejRocniUrokAVlozHoNaUcet()`.
 Metoda si sama vypočítá
@@ -141,8 +152,8 @@ Např. pokud vytvoříme objekt `new SporiciUcet(1000.0, 0.05)`,
 tedy s počátečním zůstatkem **1000** korun a úrokem **5%**,
 po zavolání metody `vypocitejRocniUrokAVlozHoNaUcet()` bude zůstatek
 roven **1050** korun.
-Metoda `vypocitejRocniUrokAVlozHoNaUcet()` musí pro účely připsání 
-úroku použít metodu `vlozPenize(...)`.    
+Metoda `vypocitejRocniUrokAVlozHoNaUcet()` musí pro účely připsání
+úroku použít metodu `vlozPenize(...)`.
 
 
 ~~~~
@@ -174,7 +185,7 @@ V případě, že bude vše fungovat správně, vypíše se:
 ~~~~
 SporiciUcet: Vsechny testy jsou OK
 ~~~~
-                      
+
 
 
 
