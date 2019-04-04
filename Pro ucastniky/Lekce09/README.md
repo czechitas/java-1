@@ -1,4 +1,15 @@
-Úkol 08 - Husy a králíci
+Lekce 09
+========
+
+GUI
+---
+
+### Videozáznam
+
+Na YouTube se můžete podívat na [záznam z lekce](https://www.youtube.com/watch?v=snIBaE03Qvw),
+případně si prohlédnout [celý playlist](https://www.youtube.com/playlist?list=PLTCx5oiCrIJ70H8jF9FxPs15e3_m6su80).
+
+Úkol - Husy a králíci
 -----------------------------------
 
 
@@ -34,7 +45,7 @@ Případně můžete rovnou připojit `int` do `Stringu`:
 int cislo3 = ...;
 String text3 = "Pocet kraliku " + cislo3;
 ~~~~
- 
+
 
 
 ### Část 2 - Farmářka 2.0
@@ -75,7 +86,7 @@ Převod z `double` na `String` se provede takto:
 ~~~~
 // Predpokladame, ze mate _prevodnik_ z minula.
 // Neni treba ho instanciovat vicekrat.
-// Je znovupouzitelny. 
+// Je znovupouzitelny.
 
 double cislo2 = ...;
 String text2 = prevodnik.print(cislo2);
@@ -89,7 +100,7 @@ znak `.` znamená **desetinnou tečku nebo čárku**
 (dle nastavení jazyka na počítači).
 znak `,` je **oddělovač tisíců**.
 
-Zkuste, jak se projeví rozdíl mezi vzorem 
+Zkuste, jak se projeví rozdíl mezi vzorem
 `"#0.000"`, `"#0.0"`, `"#0.#"` a třeba `"#,##0.00"`.
 
 
@@ -113,7 +124,7 @@ Pozn. pro měststké děti, jako je Kamil: Přes zimu se zvířátka na farmě n
 ![Screenshot](ukol09-husy3a.png)
 ![Screenshot](ukol09-husy3b.png)
 ![Screenshot](ukol09-husy3c.png)
-                      
+
 
 
 ### Odevzdání domácího úkolu
