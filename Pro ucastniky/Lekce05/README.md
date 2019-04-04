@@ -1,3 +1,14 @@
+Lekce 05
+========
+
+Třídy a objekty
+---------------
+
+### Videozáznam
+
+Na YouTube se můžete podívat na [záznam z lekce](https://www.youtube.com/watch?v=0qK5chWz6V0),
+případně si prohlédnout [celý playlist](https://www.youtube.com/playlist?list=PLTCx5oiCrIJ70H8jF9FxPs15e3_m6su80).
+
 Úkol - Třídy a objekty
 ----------------------
 
@@ -11,8 +22,8 @@ a base package zvolte `cz.czechitas.pocitac`.
 
 Vytvořte třídy `Disk`, `Pamet`, `Procesor`, `Pocitac` tak,
 aby měly následující složky:
- 
-~~~~ 
+
+~~~~
 Disk
   |
   +-- long kapacita;
@@ -22,7 +33,7 @@ Disk
   +-- public void vypisInfo()
 ~~~~
 
-~~~~ 
+~~~~
 Pamet
   |
   +-- long kapacita;
@@ -30,7 +41,7 @@ Pamet
   +-- public void vypisInfo()
 ~~~~
 
-~~~~ 
+~~~~
 Procesor
   |
   +-- String vyrobce;
@@ -64,7 +75,7 @@ podobně, jak jsme to dělali v hodině.
 Do třídy `Pocitac` navíc naprogramujte metodu `zapniSe()` a `vypniSe()`,
 které budou "zapínat" a "vypínat" počítač, t.j. nastavovat proměnnou
 `jeZapnuty` na správnou hodnotu a vypíše o tom informaci.
-Počítač je možno zapnout jen v případě, 
+Počítač je možno zapnout jen v případě,
 že má procesor, pamět i disk.
 Pokud kterákoliv část chybí (např. `ram == null`),
 metoda `zapniSe()` vypíše chybovou hlášku
@@ -75,7 +86,7 @@ opět vypište chybovou hlášku.
 Počítač je možno vypnout vícekrát, ale opakované volání
 metody `vypniSe()` se ignoruje.
 
-V metodě `main(...)` ve `SpousteciTrida` vytvořte 
+V metodě `main(...)` ve `SpousteciTrida` vytvořte
 model **svého** počítače a vyzkoušejte, že vám fungují správně metody
 `vypisInfo()` u všech tříd a že počítač jde zapnout,
 jen pokud je správně sestavený.
@@ -87,7 +98,7 @@ public static void main(String[] args) {
     Pocitac kamiluvNotebook;
     kamiluvNotebook = new Pocitac();
     kamiluvNotebook.vypisInfo();
-    kamiluvNotebook.zapniSe();      // Vypise chybu, protoze pocitac 
+    kamiluvNotebook.zapniSe();      // Vypise chybu, protoze pocitac
                                     // nema vsechny povinne soucasti
 
     Procesor kamiluvProcesor = new Procesor();
@@ -110,21 +121,21 @@ public static void main(String[] args) {
     kamiluvNotebook.zapniSe();      // Vypise chybu, protoze pocitac uz bezi
     kamiluvNotebook.vypisInfo();
     kamiluvNotebook.vypniSe();
-    
-    kamiluvNotebook.vypniSe();      // Nevypise chybu, ale nic neprovede, 
+
+    kamiluvNotebook.vypniSe();      // Nevypise chybu, ale nic neprovede,
     kamiluvNotebook.vypniSe();      // protoze pocitac je uz vypnuty
 }
 ~~~~
 
 Nezapomeňte, že je úkolem vytvořit **model svého počítače**.
-Parametry vašeho počítače budou pravděpodobně **jiné** než 
+Parametry vašeho počítače budou pravděpodobně **jiné** než
 Kamilova počítače.
 
-Poznámka: Číslo, které končí na `L` znamená, že jde o číslo 
+Poznámka: Číslo, které končí na `L` znamená, že jde o číslo
 typu `long` a nikoliv `int`. Rozdíl je v rozsahu.
 `int` pojme čísla od `-2147483648` do `+2147483647`,
 což není dostatečné pro kapacitu harddisku ani paměti.
-Proto použijte `long`, který zvládne čísla od 
+Proto použijte `long`, který zvládne čísla od
 `-9223372036854775808` do `+9223372036854775807`.
 To už je dostatečné na uchování libovolné současné kapacity harddisku.
 
@@ -137,7 +148,7 @@ Pocitac
   |
  ...
 predchozi obsah
- ... 
+ ...
   |
   +-- public void vytvorSouborOVelikosti(long velikost)
   |
@@ -147,11 +158,11 @@ predchozi obsah
 Metoda `vytvorSouborOVelikosti(long velikost)`
 zvýší proměnnou `vyuziteMisto` o `velikost`.
 Pokud by se už nově vytvářený soubor na disk nevešel
-(`vyuziteMisto > kapacita`), metoda vypíše chybu a 
+(`vyuziteMisto > kapacita`), metoda vypíše chybu a
 `vyuziteMisto` se nebude měnit.
 Metoda `vymazSouboryOVelikosti(long velikost)`
 sníží proměnnou `vyuziteMisto` o `velikost`.
-`vyuziteMisto` nemůže klesnout pod `0`. 
+`vyuziteMisto` nemůže klesnout pod `0`.
 Metody budou fungovat pouze, pokud je počítač zapnutý.
 
 Demonstrujte v `main(...)`, že se metody chovají, jak mají.
@@ -167,7 +178,7 @@ Pocitac
   |
  ...
 predchozi obsah
- ... 
+ ...
   |
   +-- Disk druhyDisk
 ~~~~
