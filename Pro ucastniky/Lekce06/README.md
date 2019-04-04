@@ -1,3 +1,14 @@
+Lekce 06
+========
+
+Vlastnosti
+----------
+
+### Videozáznam
+
+Na YouTube se můžete podívat na [záznam z lekce](https://www.youtube.com/watch?v=CDuUlFo_5VY),
+případně si prohlédnout [celý playlist](https://www.youtube.com/playlist?list=PLTCx5oiCrIJ70H8jF9FxPs15e3_m6su80).
+
 Úkol - Vlastnosti
 -----------------
 
@@ -11,8 +22,8 @@ a base package zvolte `cz.czechitas.vlastnosti`.
 
 Vytvořte třídu `Datum` tak,
 aby měla následující složky:
- 
-~~~~ 
+
+~~~~
 Datum
   |
   +-- int rok;
@@ -101,10 +112,10 @@ Nelíbí se mi, že se do objektu typu Datum dá vložit neplatná
 hodnota dne a měsíce. Řekněme, že platné hodnoty jsou:
 
 - `rok` ....... libovolná hodnota
-- `mesic` ..... 1 až 12 
+- `mesic` ..... 1 až 12
 - `den` ....... 1 až 31 (vždy, bez ohledu na měsíc)
 
-Přeprogramujte tedy třídu Datum tak, aby všechny proměnné 
+Přeprogramujte tedy třídu Datum tak, aby všechny proměnné
 byly `private` a následně doprogramujte metody podle seznamu:
 
 ~~~~
