@@ -1,3 +1,14 @@
+Lekce 03
+========
+
+Žofka a parametrizované metody
+------------------------------
+
+### Videozáznam
+
+Na YouTube se můžete podívat na [záznam z lekce](https://www.youtube.com/watch?v=M4LFfZ3EERI),
+případně si prohlédnout [celý playlist](https://www.youtube.com/playlist?list=PLTCx5oiCrIJ70H8jF9FxPs15e3_m6su80).
+
 Úkol - Metody s parametrem
 --------------------------
 
@@ -6,7 +17,7 @@
 Nejprve si okopírujte projekt **30-Turtle-Param_metody** na **40-Turtle-Param_ukol**.
 Vymažte z něj všechny původní metody a ponechejte si jen prázdný `main(...)`.
 
-Nyní vytvořte metody na kreslení základních tvarů (s pevnými velikostmi stran): 
+Nyní vytvořte metody na kreslení základních tvarů (s pevnými velikostmi stran):
 Rovnoramenného trojúhelníku, čtverce, obdelníku a kolečka.
 
 
@@ -103,7 +114,7 @@ V tomto případě jde o kombinaci jak vstupních parametrů, tak výstupu.
 ~~~Java
 public void main(String[] args) {
     double stranaC;
-    
+
     stranaC = vypocitejDelkuTretiStrany(100.0, 90.0);
     System.out.println("Strana A je 100.0, strana B je 100.0, uhel mezi nimi je 90.0°.");
     System.out.println("Pak je strana C dlouha " + stranaC);
