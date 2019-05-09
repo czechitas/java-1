@@ -95,10 +95,10 @@ Příklad metody `main(...)` Kamilova počítače:
 
 ~~~~
 public static void main(String[] args) {
-    Pocitac kamiluvNotebook;
-    kamiluvNotebook = new Pocitac();
-    kamiluvNotebook.vypisInfo();
-    kamiluvNotebook.zapniSe();      // Vypise chybu, protoze pocitac
+    Pocitac kamiluvLaptop;
+    kamiluvLaptop = new Pocitac();
+    kamiluvLaptop.vypisInfo();
+    kamiluvLaptop.zapniSe();      // Vypise chybu, protoze pocitac
                                     // nema vsechny povinne soucasti
 
     Procesor kamiluvProcesor = new Procesor();
@@ -111,19 +111,19 @@ public static void main(String[] args) {
     Disk kamiluvDisk = new Disk();
     kamiluvDisk.kapacita = 150L * 1000L * 1000L * 1000L;
 
-    kamiluvNotebook.cpu = kamiluvProcesor;
-    kamiluvNotebook.ram = kamilovaPamet;
-    kamiluvNotebook.pevnyDisk = kamiluvDisk;
+    kamiluvLaptop.cpu = kamiluvProcesor;
+    kamiluvLaptop.ram = kamilovaPamet;
+    kamiluvLaptop.pevnyDisk = kamiluvDisk;
 
-    kamiluvNotebook.vypisInfo();
+    kamiluvLaptop.vypisInfo();
 
-    kamiluvNotebook.zapniSe();
-    kamiluvNotebook.zapniSe();      // Vypise chybu, protoze pocitac uz bezi
-    kamiluvNotebook.vypisInfo();
-    kamiluvNotebook.vypniSe();
+    kamiluvLaptop.zapniSe();
+    kamiluvLaptop.zapniSe();      // Vypise chybu, protoze pocitac uz bezi
+    kamiluvLaptop.vypisInfo();
+    kamiluvLaptop.vypniSe();
 
-    kamiluvNotebook.vypniSe();      // Nevypise chybu, ale nic neprovede,
-    kamiluvNotebook.vypniSe();      // protoze pocitac je uz vypnuty
+    kamiluvLaptop.vypniSe();      // Nevypise chybu, ale nic neprovede,
+    kamiluvLaptop.vypniSe();      // protoze pocitac je uz vypnuty
 }
 ~~~~
 
