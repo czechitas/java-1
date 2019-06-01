@@ -12,8 +12,7 @@ případně si prohlédnout [celý playlist](https://www.youtube.com/playlist?li
 Úkol - Bankovní účty
 -----------------------
 
-Stáhněte si přepřipravený projekt s domácím úkolem zde:
-[Ukol07.zip](../../data/2018-podzim/java1/Ukol07.zip)
+Zkopírujte si předpřipravený projekt s domácím úkolem **60-Banka-Zadani**.
 
 
 ### Část 1
