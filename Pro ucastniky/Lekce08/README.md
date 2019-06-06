@@ -174,7 +174,7 @@ public class SporiciUcet
   |
   +-- public boolean vyberPenize(double castka)
   |
-  +-- public void vlozNaUcetRocniUrok()
+  +-- public void vypocitejRocniUrokAVlozHoNaUcet()
 ~~~~
 
 Abyste ověřili, že máte program správně,
