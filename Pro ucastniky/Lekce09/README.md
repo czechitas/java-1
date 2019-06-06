@@ -58,7 +58,7 @@ což (pro zjednodušení) považujme za dobu půl roku
 
 Králíci žerou přes zimu mrkev, husy zrní.
 Jeden králík sní 0.5 kg mrkve denně a jedna husa 0.25 kg zrní.
-Potřebujete tedy 183*0.5 kg mrkve na každého králíka a 183*0.25 kg zrní na každou husu.
+Potřebujete tedy 183\*0.5 kg mrkve na každého králíka a 183\*0.25 kg zrní na každou husu.
 
 Z jednoho řádku mrkve můžete sklidit 5 kg mrkve.
 Z jednoho řádku pšenice sklidíte 2 kg.
