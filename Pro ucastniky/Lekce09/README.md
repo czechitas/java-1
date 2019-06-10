@@ -74,34 +74,8 @@ Inspiraci pro uživatelské rozhraní můžete načerpat zde:
 #### Rady na cestu:
 
 Aritmetiku provádějte v proměnné typu double.
-Převod ze `String` na `double` se provede takto:
-~~~~
-DoubleFormatter prevodnik = new DoubleFormatter("#0.#");
-
-String text1 = ...;
-double cislo1 = prevodnik.parse(text1);
-~~~~
-
-Převod z `double` na `String` se provede takto:
-~~~~
-// Predpokladame, ze mate _prevodnik_ z minula.
-// Neni treba ho instanciovat vicekrat.
-// Je znovupouzitelny.
-
-double cislo2 = ...;
-String text2 = prevodnik.print(cislo2);
-~~~~
-
-Do konstruktoru třídy `DoubleFormatter` se předává vzor
-pro formát čísla pro převod z `double` na `String`.
-Znak `0` znamená **povinnou číslici**,
-znak `#` znamená **nepovinnou číslici**,
-znak `.` znamená **desetinnou tečku nebo čárku**
-(dle nastavení jazyka na počítači).
-znak `,` je **oddělovač tisíců**.
-
-Zkuste, jak se projeví rozdíl mezi vzorem
-`"#0.000"`, `"#0.0"`, `"#0.#"` a třeba `"#,##0.00"`.
+Převod mezi `String` a `double` se provede obdobně jako mezi `String` a `int`,
+konkrétně metodami `Double.parseDouble` a `Double.toString`.
 
 
 
