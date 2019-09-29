@@ -65,3 +65,6 @@ pripadne muze stat, ze papirove slozena skladacka byla vlastne spatne. Ale to ne
 ze program se na prvni pokus nenapise spravne.
 
 Skladani je v treba udelat v hodine, prepsani do pocitace je idealni domaci ukol.
+
+Tip: Ukazte na lekci studentkam, jak ma vypadat spravny vysledek (tzn. "plech byl vyndan a bublanina je hotova :-)"),
+at vidi, co maji ocekavat.
