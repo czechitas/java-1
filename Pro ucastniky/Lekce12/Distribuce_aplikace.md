@@ -90,17 +90,17 @@ běžným uživatelům?
     na které může běžný uživatel dvojkliknout a aplikace se mu spustí.
 
     Připravil jsem vám je do materiálů lekce 12:
-    - Spustit-Windows.bat
-    - Spustit-Mac.command
+    - Start-Windows.bat
+    - Start-Mac.command
 
     Postupujte tedy takto:
 
     1.  Před použitím v nich upravte údaje (konkrétní jména).
 
-        Tip: Nejsnadněji to provedete tak, že soubory přetáhnete do IntelliJ IDEA
-        (do prostoru středového editoru) a změníte v ní. IDEA je spolehlivý editor.
+        Tip: Nejsnadněji to provedete tak, že soubory otevřete v IntelliJ IDEA
+        (například přetáhnutím do prostoru středového editoru). IDEA je spolehlivý textový editor. Nic nepřidává, nic neodebírá.
 
-        -   Spustit-Windows.bat:
+        -   Start-Windows.bat:
             ~~~~bash
             set "APP_JAR=NAZEV VYSLEDNEHO JAR SOUBORU"
             ~~~~
@@ -110,7 +110,7 @@ běžným uživatelům?
             set "APP_JAR=Mandala.jar"
             ~~~~
 
-        -   Spustit-Mac.command:
+        -   Start-Mac.command:
             ~~~~bash
             APP_JAR="NAZEV VYSLEDNEHO JAR SOUBORU"
             APP_NAME="NAPIS V ZAHLAVI OKNA"
@@ -125,5 +125,5 @@ běžným uživatelům?
     2.  Hotové spouštěcí skripty zkopírujte do distribuční složky ***PROJEKT*/target/dist**.
 
 5.  A hotovo! Takto vytvořenou složku ***PROJEKT*/target/dist** můžete komukoliv nahrát,
-    a pokud má nainstalované JRE Java 8, pojede mu to. Instalátor JRE si může kdokoliv
-    stáhnout z [https://www.java.com/](https://www.java.com/).
+    a pokud má nainstalované JRE nebo JDK pro Java 8, pojede mu to. Instalátor JRE/JDK si může kdokoliv
+    stáhnout z [adoptopenjdk.net](https://adoptopenjdk.net/).

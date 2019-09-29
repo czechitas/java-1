@@ -12,14 +12,6 @@ Cil lekce
 - Udalosti
 
 
-Videozaznam
------------
-
-Playlist vsech lekci z kurzu Kamila Sevecka
-*   Podzim 2017 (https://www.youtube.com/playlist?list=PLUVJxzuCt9AROpKl3Hu-DvdgQV-xHaoQY) -> Lekce 05
-*   Podzim 2018 (https://www.youtube.com/playlist?list=PLTCx5oiCrIJ70H8jF9FxPs15e3_m6su80)
-
-
 Poznamky:
 --------
 MigLayout - doporucuji striktne pouzivat vsude pouze MigLayout nebo pozicovani po pixelech (layout=null).
@@ -65,3 +57,12 @@ Pokud studentkam budete chtit ukazat obsluhu udalosti actionPerformed na tlacitk
 -  Prevod jednotek z mil na kilometry
 -  Vypocet DPH
 -  nebo cokoliv dalsiho se zadavacimi boxiky a tlacitky, kde se pekne ukaze moznost navrhnout si vlastni appku pomoci designeru a MigLayoutu.
+
+
+Videozaznam
+-----------
+
+Playlist vsech lekci z kurzu Kamila Ševeèka
+*   Podzim 2019 (https://www.youtube.com/playlist?list=PLTCx5oiCrIJ7tIik1OiuPmGwt4OOqomrR)
+*   Podzim 2018 (https://www.youtube.com/playlist?list=PLTCx5oiCrIJ70H8jF9FxPs15e3_m6su80)
+*   Podzim 2017 (https://www.youtube.com/playlist?list=PLUVJxzuCt9AROpKl3Hu-DvdgQV-xHaoQY)

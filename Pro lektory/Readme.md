@@ -2,10 +2,13 @@ Kurz Java 1
 ===========
 
 **Budeme pouzivat:**
--  Intellij IDEA Community
+- OpenJDK 8
+- Intellij IDEA Community Edition
+- Maven
 - MigLayout
 - JFormDesigner
 
+Sablona projektu User Defined -> Java Console App
 Sablona projektu User Defined -> Java Window App
 
 **TODO: Co dela**
@@ -14,11 +17,9 @@ Sablona projektu User Defined -> Java Window App
 - ```NativeLookAndFeel```
 - ```HlavniOkno```
 - ```JPanel contentPane;```
-- ```setBackgroundColor()```
 - ```MigLayout migLayoutManager;```
 
 **TODO: Zdokumentovat veci, co se pouzivaji z Sevecek.net Utils**
-- JKeyboard
 - SwingExceptionHandler
 - ThreadUtils.sleep();
 
