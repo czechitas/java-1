@@ -7,24 +7,26 @@ public class Pocitac {
     Pamet ram;
     Disk pevnyDisk;
 
-    public void vypisInfo() {
+    public String toString() {
+        String result;
         if (jeZapnuty) {
-            System.out.print("Zapnuty pocitac [");
+            result = "Zapnuty pocitac [";
         } else {
-            System.out.print("Vypnuty pocitac [");
+            result = "Vypnuty pocitac [";
         }
         if (cpu != null) {
-            cpu.vypisInfo();
-            System.out.print(", ");
+            result = result + cpu.toString();
+            result = result + ", ";
         }
         if (ram != null) {
-            ram.vypisInfo();
-            System.out.print(", ");
+            result = result + ram.toString();
+            result = result + ", ";
         }
         if (pevnyDisk != null) {
-            pevnyDisk.vypisInfo();
+            result = result + pevnyDisk.toString();
         }
-        System.out.println("]");
+        result = result + "]";
+        return result;
     }
 
     public void zapniSe() {

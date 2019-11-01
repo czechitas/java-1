@@ -5,8 +5,8 @@ public class Procesor {
     String vyrobce;
     long rychlost;
 
-    public void vypisInfo() {
-        System.out.print("Procesor: " + vyrobce + " " + rychlost + " Hz");
+    public String toString() {
+        return "Procesor: " + vyrobce + " " + rychlost + " Hz";
     }
 
 }

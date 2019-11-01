@@ -23,7 +23,7 @@ public class HlavniOkno extends JFrame {
         try {
             initComponents();
 //        obrazek = new BufferedImage(1920, 1080, BufferedImage.TYPE_4BYTE_ABGR);
-            obrazek = ImageIO.read(new File("C:\\Java-Training\\Projects\\Java1\\Lekce11\\obrazek1.png"));
+            obrazek = ImageIO.read(new File("C:\\Java-Training\\Projects\\Java-1\\Lekce11\\obrazek1.png"));
             labObrazek.setIcon(new ImageIcon(obrazek));
         } catch (IOException e) {
             throw new RuntimeException(e);

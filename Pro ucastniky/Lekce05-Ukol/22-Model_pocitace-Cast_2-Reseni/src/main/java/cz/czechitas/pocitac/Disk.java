@@ -5,7 +5,7 @@ public class Disk {
     long kapacita;
     long vyuziteMisto;
 
-    public void vypisInfo() {
-        System.out.print("Disk: Obsazeno " + vyuziteMisto + " / " + kapacita + " bajtu");
+    public String toString() {
+        return "Disk: Obsazeno " + vyuziteMisto + " / " + kapacita + " bajtu";
     }
 }

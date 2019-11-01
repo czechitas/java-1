@@ -14,7 +14,7 @@ Cil lekce
 Videozaznam
 -----------
 
-Playlist vsech lekci z kurzu Kamila Ševeèka
+Playlist vsech lekci z kurzu Kamila Ševecka
 *   Podzim 2019 (https://www.youtube.com/playlist?list=PLTCx5oiCrIJ7tIik1OiuPmGwt4OOqomrR)
 *   Podzim 2018 (https://www.youtube.com/playlist?list=PLTCx5oiCrIJ70H8jF9FxPs15e3_m6su80)
 *   Podzim 2017 (https://www.youtube.com/playlist?list=PLUVJxzuCt9AROpKl3Hu-DvdgQV-xHaoQY)
@@ -30,7 +30,7 @@ Kresleni pomoci zelvy. Inspirovano podobnym programovacim prostredim na Zbrojova
 Zde je super, ze studentky zacinaji uz uplne od nuly - od `main(...)`. Kdyz napisi:
 `new Turtle()` a ona se jim zobrazi zelva.
 
-V hodine doporucuji nejprve ukazat, jak se nakresli hvezdicka. Tim se demonstruje pouziti metod.
+V hodine doporucuji nejprve ukazat, jak se nakresli cara a pak ctverec. Tim se demonstruje pouziti metod.
 Dale spolu se studentkami doporucuji vytvorit metody na ctverec a rovnostranny trojuhelnik.
 Jako samostatnou praci muzou studentky zkusit domecek a prasatko.
 

@@ -1,13 +1,12 @@
 package cz.czechitas.pocitac;
 
-import net.sevecek.console.*;
-
 public class SpousteciTrida {
 
     public static void main(String[] args) {
         Pocitac kamiluvNotebook;
         kamiluvNotebook = new Pocitac();
-        kamiluvNotebook.vypisInfo();
+        System.out.println(kamiluvNotebook.toString());
+
         kamiluvNotebook.zapniSe();
 
         Procesor kamiluvProcesor = new Procesor();
@@ -18,13 +17,13 @@ public class SpousteciTrida {
         kamilovaPamet.kapacita = 32_000_000_000L;
 
         Disk kamiluvDisk = new Disk();
-        kamiluvDisk.kapacita = 150_000_000_000L;
+        kamiluvDisk.kapacita = 1_500_000_000_000L;
 
         kamiluvNotebook.cpu = kamiluvProcesor;
         kamiluvNotebook.ram = kamilovaPamet;
         kamiluvNotebook.pevnyDisk = kamiluvDisk;
 
-        kamiluvNotebook.vypisInfo();
+        System.out.println(kamiluvNotebook.toString());
 
         kamiluvNotebook.zapniSe();
         kamiluvNotebook.vytvorSouborOVelikosti(333_000L);

@@ -4,8 +4,8 @@ public class Pamet {
 
     long kapacita;
 
-    public void vypisInfo() {
-        System.out.print("RAM: " + kapacita + " bajtu");
+    public String toString() {
+        return "RAM: " + kapacita + " bajtu";
     }
 
 }

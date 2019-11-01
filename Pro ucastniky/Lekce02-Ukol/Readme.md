@@ -3,11 +3,8 @@
 
 ### Část 1
 
-Nejprve dodělejte program z hodiny. Konkrétně obrazce hvězdičky, domečku a prasátka. Vytvořte metodu
-**nakresliHvezdicku()** a zavolejte ji v hlavním programu.
-Podobně, jak jsme to dělali v hodině s metodou
-**nakresliDomecek()**, **nakresliPrasatko()** a **nakresliNozicky()**.
-Jako bonus můžete dokreslit i ocásek.
+Nejprve dodělejte program z hodiny. Konkrétně obrazce domečků a prasátka.
+Jako bonus můžete dokreslit prasátku i ocásek.
 
 <img src="img/ukol02-domecek.svg" height="200" />
 
@@ -43,10 +40,27 @@ a toto opakujete n-krát (třeba 18 krát).
 ### Část 3
 
 Nakreslete kompozici podle obrázku níže.
-Asi budete muset upravit velikost původních obrázků,
-protože 150 pixelů na stranu je pravděpodobně moc.
 
 <img src="img/ukol02-vesnice.svg" height="500" />
+
+
+### Část 4
+
+Naučte želvu nakreslit písmena, která máte ve jméně, a nakreslete svoje křestní jméno.
+V této části se zaměřte na znovupoužitelnost.
+Vytvořte tedy pro každé písmeno metodu (např. `nakresliA()`, `nakresliB()`, ...)
+a u každého písmene začněte vlevo dole (jakoby na spodní lince písmene) a skončete na vpravo dole (na spodní lince písmene) v místě pro další písmeno (za mezerou).
+Pokud si disciplinovaně udržíte tento styl v každé metodě, bude možno písmena skládat za sebe v libovolném pořadí.
+
+Pro ukázku uvažujme písmeno K. Tečkovaně je naznačeno, jak ho bude želva kreslit. Želva je zatím ve výchozí pozici (a písmeno zatím nenakreslila):
+
+<img src="img/ukol02-pismeno-zacatek.svg" height="200" />
+
+
+Želva písmeno postupně nakreslí a skončí v této pozici:
+
+<img src="img/ukol02-pismeno-konec.svg" height="200" />
+
 
 
 ### Odevzdání domácího úkolu

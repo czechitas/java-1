@@ -6,7 +6,7 @@
 Založte nový projekt, stejně jako v hodině:
 **Create new project -> User Defined Template -> Java Console App**.
 Nazvěte ho `Datum`,
-uložte do `JAVATRAINING/Projects/Java1/Lekce06/Datum`
+uložte do `JAVATRAINING/Projects/Java-1/Lekce06/Datum`
 a base package zvolte `cz.czechitas.vlastnosti`.
 
 Vytvořte třídu `Datum` tak,

@@ -6,7 +6,7 @@
 Založte nový projekt, stejně jako v hodině:
 **Create new project -> User Defined Template -> Java Console App**.
 Nazvěte ho `20-Model_pocitace`,
-uložte do `JAVATRAINING/Projects/Java1/Lekce05/20-Model_pocitace`
+uložte do `JAVATRAINING/Projects/Java-1/Lekce05/20-Model_pocitace`
 a base package zvolte `cz.czechitas.pocitac`.
 
 Vytvořte třídy `Disk`, `Pamet`, `Procesor`, `Pocitac` tak,
@@ -19,7 +19,7 @@ Disk
   |
   +-- long vyuziteMisto;
   |
-  +-- public void vypisInfo()
+  +-- public String toString()
 ~~~~
 
 ~~~~
@@ -27,7 +27,7 @@ Pamet
   |
   +-- long kapacita;
   |
-  +-- public void vypisInfo()
+  +-- public String toString()
 ~~~~
 
 ~~~~
@@ -37,7 +37,7 @@ Procesor
   |
   +-- long rychlost;
   |
-  +-- public void vypisInfo()
+  +-- public String toString()
 ~~~~
 
 ~~~~
@@ -51,14 +51,14 @@ Pocitac
   |
   +-- Disk pevnyDisk;
   |
-  +-- public void vypisInfo()
+  +-- public String toString()
   |
   +-- public void zapniSe()
   |
   +-- public void vypniSe()
 ~~~~
 
-Do každé třídy naprogramujte `vypisInfo()`,
+Do každé třídy naprogramujte `toString()`,
 podobně, jak jsme to dělali v hodině.
 
 Do třídy `Pocitac` navíc naprogramujte metodu `zapniSe()` a `vypniSe()`,
@@ -77,7 +77,7 @@ metody `vypniSe()` se ignoruje.
 
 V metodě `main(...)` ve `SpousteciTrida` vytvořte
 model **svého** počítače a vyzkoušejte, že vám fungují správně metody
-`vypisInfo()` u všech tříd a že počítač jde zapnout,
+`toString()` u všech tříd a že počítač jde zapnout,
 jen pokud je správně sestavený.
 
 Příklad metody `main(...)` Kamilova počítače:
@@ -86,7 +86,7 @@ Příklad metody `main(...)` Kamilova počítače:
 public static void main(String[] args) {
     Pocitac kamiluvLaptop;
     kamiluvLaptop = new Pocitac();
-    kamiluvLaptop.vypisInfo();
+    System.out.println(kamiluvLaptop.toString());
     kamiluvLaptop.zapniSe();      // Vypise chybu, protoze pocitac
                                   // nema vsechny povinne soucasti
 
@@ -104,11 +104,11 @@ public static void main(String[] args) {
     kamiluvLaptop.ram = kamilovaPamet;
     kamiluvLaptop.pevnyDisk = kamiluvDisk;
 
-    kamiluvLaptop.vypisInfo();
+    System.out.println(kamiluvLaptop.toString());
 
     kamiluvLaptop.zapniSe();
     kamiluvLaptop.zapniSe();      // Vypise chybu, protoze pocitac uz bezi
-    kamiluvLaptop.vypisInfo();
+    System.out.println(kamiluvLaptop.toString());
     kamiluvLaptop.vypniSe();
 
     kamiluvLaptop.vypniSe();      // Nevypise chybu, ale nic neprovede,

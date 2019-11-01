@@ -2,7 +2,7 @@
 -------------------
 
 Za domácí úkol je přepsat složenou Bublaninu do Javy do projektu
-**Java-Training/Projects/Java1/Lekce01/20-Bublanina-Zadani-v2.12** (v editoru IntelliJ IDEA) z fotky z hodiny, kterou jste si
+**JAVATRAINING/Projects/Java-1/Lekce01/20-Bublanina-Zadani-v2.12** (v editoru IntelliJ IDEA) z fotky z hodiny, kterou jste si
 podle doporučení měly udělat. Bublaninu lze řesit více způsoby, není tedy jediné správné řešení. Program nicméně pozná,
 že je vyřešen správně (a vypíše to).
 

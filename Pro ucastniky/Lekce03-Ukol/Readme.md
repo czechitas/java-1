@@ -103,7 +103,7 @@ V tomto případě jde o kombinaci jak vstupních parametrů, tak výstupu.
 ~~~Java
 public void main(String[] args) {
     double stranaC;
-    
+
     stranaC = vypocitejDelkuTretiStrany(100.0, 90.0);
     System.out.println("Strana A je 100.0, strana B je 100.0, uhel mezi nimi je 90.0°.");
     System.out.println("Pak je strana C dlouha " + stranaC);
@@ -124,11 +124,11 @@ public double vypocitejDelkuTretiStrany(double velikostRamene, double uhelMeziRa
 
 Pomocí výše odladěných metod nakreslete následující obrázky - zmrzlinu, sněhuláka a mašinku.
 
-<img src="ukol03-zmrzlina.svg" width="100" />
+<img src="img/ukol03-zmrzlina.svg" width="100" />
 
-<img src="ukol03-snehulak.svg" height="300" />
+<img src="img/ukol03-snehulak.svg" height="300" />
 
-<img src="ukol03-lokomotiva.svg" height="150" />
+<img src="img/ukol03-lokomotiva.svg" height="150" />
 
 
 
