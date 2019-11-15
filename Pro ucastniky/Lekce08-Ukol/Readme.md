@@ -2,7 +2,8 @@
 -----------------------
 
 Vyjděte z předpřipraveného projektu **60-Banka-Zadani**
-zde: [Ukol07.zip](../../data/2019-podzim/java1/Ukol07.zip).
+zde: [Java-Training--Projects--Java-1--Lekce08-Ukol.zip](../../data/2019-podzim/java1/Java-Training--Projects--Java-1--Lekce08-Ukol.zip).
+
 
 
 ### Část 1
@@ -30,13 +31,12 @@ Poznámky ke třídě:
 - Dále má 1 konstruktor (`public BeznyUcet(double pocatecniCastka)`), který přijímá počáteční hodnotu zůstatku.
     Tedy vlastně počáteční vklad.
 
-- Metoda `getZustatek()` nám hodnotu zustatku dokáže vrátit.
+- Metoda `getZustatek()` vrací hodnotu `zustatku`.
 
-    Pozor: Nevypisuje nic na obrazovku. (Viz rozdíl z lekce mezi výpisem na obrazovku
-    a návratovou hodnotou z metody).
+    Pozor: Nevypisuje nic na obrazovku. Je to opravdu jen *getter*.
 
 - Metoda `vyberPenize(...)` odečte od zůstatku částku, která
-přijde jako vstupní parametr metody a vrátí `true`.
+    přijde jako vstupní parametr metody a vrátí `true`.
 
     Pokud by byla metod zavolána se zápornou částkou,
     vypište chybovou hlášku, neměňte zůstatek a vraťte `false`.
@@ -55,7 +55,7 @@ přijde jako vstupní parametr metody a vrátí `true`.
 
 Abyste ověřili, že máte program správně,
 odkomentujte ve třídě `SpousteciTrida` volání první metody
-`tester1.testNormalAccount()` a celou třídu `NormalAccountTest`.
+`tester1.otestujBeznyUcet()` a celou třídu `BeznyUcetTest`.
 V případě, že bude vše fungovat správně, vypíše se:
 ~~~~
 BeznyUcet: Vsechny testy jsou OK
@@ -63,12 +63,10 @@ BeznyUcet: Vsechny testy jsou OK
 
 
 
-
-
 ### Část 2
 
 Rozšiřte třídu `BeznyUcet` o funkcionalitu *povoleného přečerpání účtu*
-(tzv. *debet* nebo *kontokorent*).
+(tzv. *povolený debet* nebo *kontokorent*).
 
 Se zůstatkem tedy bude možné jít do záporu, ale jen do určité výše.
 Ta se dá nastavit v konstruktoru
@@ -112,7 +110,7 @@ public class BeznyUcet
 
 Abyste ověřili, že máte program správně,
 odkomentujte ve třídě `SpousteciTrida` volání druhé metody
-`tester2.testOverdraftAccount()` a celou třídu `OverdraftAccountTest`.
+`tester2.otestujPovolenyDebet()` a celou třídu `PovolenyDebetTest`.
 V případě, že bude vše fungovat správně, vypíše se:
 ~~~~
 BeznyUcet + Precerpani: Vsechny testy jsou OK
@@ -120,16 +118,14 @@ BeznyUcet + Precerpani: Vsechny testy jsou OK
 
 
 
-
 ### Část 3 - Dobrovolná část
 
 Tato část je dobrovolná.
-Pokud by pro vás byl úkol už příliš rozsáhlý,
-smíte ji vynechat.
-Nicmnéně je velmi doporučeno zpracovat i tuto část.
+Pokud by pro vás byl úkol už příliš rozsáhlý, smíte ji vynechat.
+Nicméně je velmi doporučeno zpracovat i ji.
 
 Vytvořte třídu `SporiciUcet`,
-která bude představovat sestarskou třídu k `BeznyUcet`.
+která bude představovat sesterskou třídu k `BeznyUcet`.
 Nebude umožňovat jít do záporu (*povolené přečerpání účtu*),
 ale naopak bude evidovat *úrokovou míru* (procenta) a umožní
 jednou ročně bance vložit vypočtený úrok (peníze) na účet
@@ -169,12 +165,11 @@ public class SporiciUcet
 
 Abyste ověřili, že máte program správně,
 odkomentujte ve třídě `SpousteciTrida` volání třetí metody
-`tester3.testSavingsAccount()` a celou třídu `SavingsAccountTest`.
+`tester3.otestujSporiciUcet()` a celou třídu `SporiciUcetTest`.
 V případě, že bude vše fungovat správně, vypíše se:
 ~~~~
 SporiciUcet: Vsechny testy jsou OK
 ~~~~
-
 
 
 
@@ -184,19 +179,20 @@ Metoda `main(...)` hotového programu by tedy měla vypadat takto:
 
 ~~~~
 public static void main(String[] args) {
-    NormalAccountTest tester1 = new NormalAccountTest();
-    OverdraftAccountTest tester2 = new OverdraftAccountTest();
-    SavingsAccountTest tester3 = new SavingsAccountTest();
+    BeznyUcetTest tester1 = new BeznyUcetTest();
+    PovolenyDebetTest tester2 = new PovolenyDebetTest();
+    SporiciUcetTest tester3 = new SporiciUcetTest();
 
-    tester1.testNormalAccount();
-    tester2.testOverdraftAccount();
-    tester3.testSavingsAccount();
+    tester1.otestujBeznyUcet();
+    tester2.otestujPovolenyDebet();
+    tester3.otestujSporiciUcet();
 }
 ~~~~
 
-Pokud vám všechny testovací metody projdou,
-a nakonec se alespoň 2x (lépe 3x) vypíše `All tests are OK`,
-máte vše správně a můžete úkol odevzdat.
+Pokud vám všechny testovací metody projdou, nakonec se 2x vypíše
+`Vsechny testy jsou OK` (nebo 3x v případě splnění i nepovinné části).
+Pak můžete úkol odevzdat.
+
 
 
 ### Odevzdání domácího úkolu
