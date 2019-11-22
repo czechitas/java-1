@@ -1,6 +1,7 @@
 Úkol 07 - Husy a králíci
 ------------------------
 
+Naprogramujte vylepšenou aplikaci Farmářka (založenou na Husách a králících z lekce).
 
 ### Část 1 - Farmářka 1.0
 
@@ -10,6 +11,12 @@ Máte malou farmu s husami a králíky.
 Když zadáte do appky počet králíků a počet hus, appka vám vypočítá,
 kolik nohou a hlav na farmě je.
 Mutanti a zvířata bez nožiček a hlaviček se nepočítají.
+
+Tato verze aplikace je dokončení z lekce se samostatnými JTextFieldy pro výsledky,
+kterou jste mohli stihnout už v lekci samotné, ale pravděpodobně úplně nestihli.
+
+Pozor, JTextFieldy s výslednými hodnotami by neměly být editovatelné (tj. měli by být read-only),
+ale pořád by mělo jít v nich označit hodnotu a zkopírovat jit do schránky (Ctrl+C / Cmd+C).
 
 ![Screenshot](img/ukol09-husy1.png)
 
@@ -34,6 +41,8 @@ Případně můžete rovnou připojit `int` do `Stringu`:
 int cislo3 = ...;
 String text3 = "Pocet kraliku " + cislo3;
 ~~~~
+
+Neplatné hodnoty zadané do JTextFieldu neřešte.
 
 
 
