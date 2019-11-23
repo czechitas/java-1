@@ -3,6 +3,8 @@
 
 Naprogramujte vylepšenou aplikaci Farmářka (založenou na Husách a králících z lekce).
 
+
+
 ### Část 1 - Farmářka 1.0
 
 Naprogramujte aplikaci, která se hodí každému farmáři a farmářce.
@@ -13,9 +15,9 @@ kolik nohou a hlav na farmě je.
 Mutanti a zvířata bez nožiček a hlaviček se nepočítají.
 
 Tato verze aplikace je dokončení z lekce se samostatnými JTextFieldy pro výsledky,
-kterou jste mohli stihnout už v lekci samotné, ale pravděpodobně úplně nestihli.
+kterou jste mohli stihnout už v lekci samotné, ale pravděpodobně úplně ne.
 
-Pozor, JTextFieldy s výslednými hodnotami by neměly být editovatelné (tj. měli by být read-only),
+Pozor, JTextFieldy s výslednými hodnotami by neměly být editovatelné (tj. měly by být read-only),
 ale pořád by mělo jít v nich označit hodnotu a zkopírovat jit do schránky (Ctrl+C / Cmd+C).
 
 ![Screenshot](img/ukol09-husy1.png)
