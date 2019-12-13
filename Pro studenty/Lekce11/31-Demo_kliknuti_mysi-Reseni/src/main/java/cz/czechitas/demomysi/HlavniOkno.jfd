@@ -1,4 +1,4 @@
-JFDML JFormDesigner: "6.0.2.0.116" Java: "1.8.0_162" encoding: "UTF-8"
+JFDML JFormDesigner: "6.0.2.0.116" Java: "1.8.0_202" encoding: "UTF-8"
 
 new FormModel {
 	contentType: "form/swing"
@@ -17,10 +17,10 @@ new FormModel {
 				"JavaCodeGenerator.postInitCode": "this.contentPane = (JPanel) this.getContentPane();\nthis.contentPane.setBackground(this.getBackground());\nLayoutManager layout = this.contentPane.getLayout();\nif (layout instanceof MigLayout) {\n    this.migLayoutManager = (MigLayout) layout;\n}\n"
 			}
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "labObrazek"
-				"background": new java.awt.Color( 204, 255, 51, 255 )
+				name: "labPlocha"
+				"background": new java.awt.Color( 255, 255, 204, 255 )
 				"opaque": true
-				addEvent( new FormEvent( "java.awt.event.MouseListener", "mousePressed", "priKliknutiMysiNaContentPane", true ) )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mousePressed", "priKliknutiMysiNaLabel", true ) )
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 				"value": "cell 0 0"
 			} )

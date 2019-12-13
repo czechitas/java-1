@@ -15,8 +15,5 @@
     <orderEntry type="library" name="Maven: com.miglayout:miglayout-swing:5.0" level="project" />
     <orderEntry type="library" name="Maven: com.miglayout:miglayout-core:5.0" level="project" />
     <orderEntry type="library" name="Maven: net.sevecek:sevecek-net-utils:0.9.1" level="project" />
-    <orderEntry type="library" name="Maven: com.miglayout:miglayout-swing:5.0" level="project" />
-    <orderEntry type="library" name="Maven: com.miglayout:miglayout-core:5.0" level="project" />
-    <orderEntry type="library" name="Maven: net.sevecek:sevecek-net-utils:0.9.1" level="project" />
   </component>
 </module>
