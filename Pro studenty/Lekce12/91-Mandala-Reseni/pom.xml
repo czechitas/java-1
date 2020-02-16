@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cz.czechitas.java1</groupId>
-    <artifactId>piskvorky</artifactId>
+    <artifactId>mandala</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
 
@@ -14,7 +14,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <maven.test.skip>true</maven.test.skip>
-        <exec.mainClass>cz.czechitas.piskvorky.SpousteciTrida</exec.mainClass>
+        <exec.mainClass>cz.czechitas.mandala.SpousteciTrida</exec.mainClass>
     </properties>
 
     <dependencies>
@@ -31,7 +31,7 @@
     </dependencies>
 
     <build>
-        <finalName>Piskvorky</finalName>
+        <finalName>Mandala</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
