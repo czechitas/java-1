@@ -23,7 +23,7 @@ Instalace
 
 Na kurz je nutné mít nainstalovanou IntelliJ IDEA - Community Edition, JDK a Maven.
 Musejí být přesně nastavené, proto je **nutné** použít přesně předpřipravený archív
-podle návodu: http://javainstall.czechitas.cz/community/
+podle návodu: https://javainstall.czechitas.cz/community/
 
 
 
