@@ -1,10 +1,10 @@
-Lekce 06
-========
-
-Vlastnosti
-----------
+Lekce 06 - Zapouzdření a vlastnosti
+-----------------------------------
 
 ### Videozáznam
 
-Na YouTube se můžete podívat na [záznam z lekce](https://www.youtube.com/watch?v=CDuUlFo_5VY),
-případně si prohlédnout [celý playlist](https://www.youtube.com/playlist?list=PLTCx5oiCrIJ70H8jF9FxPs15e3_m6su80).
+Na YouTube je k dispozici playlist všech lekcí:
+* [Jaro 2020](https://www.youtube.com/playlist?list=PLTCx5oiCrIJ6qqLUbTUvUyt2GcwnyjtRp)
+* [Podzim 2019](https://www.youtube.com/playlist?list=PLTCx5oiCrIJ7tIik1OiuPmGwt4OOqomrR)
+* [Podzim 2018](https://www.youtube.com/playlist?list=PLTCx5oiCrIJ70H8jF9FxPs15e3_m6su80)
+* [Podzim 2017](https://www.youtube.com/playlist?list=PLUVJxzuCt9AROpKl3Hu-DvdgQV-xHaoQY)

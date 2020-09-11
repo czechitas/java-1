@@ -110,7 +110,7 @@ běžným uživatelům?
     ~~~~
 
 
-3.  Rozbalte spouštecí skripty pro koncového uživatele (Skripty.zip) 
+3.  Rozbalte spouštecí skripty pro koncového uživatele (Skripty.zip)
     do ***PROJEKT*/src/dist**. Mělo by to vypadat jako na obrázku:
 
     ![](img/lekce12-spousteci-skripty.png)
@@ -136,14 +136,11 @@ běžným uživatelům?
     Takovouto složku ***PROJEKT*/target/dist** opravdu stačí jen zabalit zipem a nahrát ji komukoliv s kompatibilním operačním systémem a on si bude aplikaci schopen spustit.
 
 
+
 ### Videozáznam
 
-Na YouTube se můžete podívat na záznam z lekce:
-
-<iframe width="560" height="315"
-	src="https://www.youtube.com/embed/dkL0agOd11Y"
-	frameborder="0"
-	allowfullscreen></iframe>
-
-Celý playlist na YouTube najdete zde:
-[Java 1 - Brno (podzim 2019) - YouTube playlist](https://www.youtube.com/playlist?list=PLTCx5oiCrIJ7tIik1OiuPmGwt4OOqomrR)
+Na YouTube je k dispozici playlist všech lekcí:
+* [Jaro 2020](https://www.youtube.com/playlist?list=PLTCx5oiCrIJ6qqLUbTUvUyt2GcwnyjtRp)
+* [Podzim 2019](https://www.youtube.com/playlist?list=PLTCx5oiCrIJ7tIik1OiuPmGwt4OOqomrR)
+* [Podzim 2018](https://www.youtube.com/playlist?list=PLTCx5oiCrIJ70H8jF9FxPs15e3_m6su80)
+* [Podzim 2017](https://www.youtube.com/playlist?list=PLUVJxzuCt9AROpKl3Hu-DvdgQV-xHaoQY)

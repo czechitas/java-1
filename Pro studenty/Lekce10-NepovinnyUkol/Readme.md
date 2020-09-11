@@ -7,14 +7,15 @@ Nepovinný úkol - Piškvorky 3x3
 Naprogramujte aplikaci klasických piškvorek 3x3 (Tic Tac Toe).
 Využijte stejnou techniku jako u kalkulačky v hodině.
 Tj. udělejte pouze 1 obsluhu události pro všech 9 tlačítek
-a z parametru `ActionEvent e` si vyzvedněte `source` komponentu,
+a z parametru `ActionEvent e` si vyzvedněte `source`, tedy vizuální komponentu,
 na kterou uživatel kliknul. Ve vlastnosti `text` té dané komponenty
 pak mejte buď `""`, `"O"` nebo `"X"`.
 
 Ukázku kalkulačky můžete vidět na videu z lekce
 a stáhnout si ji v [materiálech z hodiny](lekce10.html).
 
-Vyhodnocovat vítězství nemusíte, ale je to speciální bonus.
+Vyhodnocovat vítězství nemusíte. To je ultra speciální bonus.
+
 
 
 ### Odevzdání domácího úkolu
