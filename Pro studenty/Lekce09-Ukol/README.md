@@ -23,6 +23,7 @@ ale pořád by mělo jít v nich označit hodnotu a zkopírovat jit do schránky
 ![Screenshot](img/ukol09-husy1.png)
 
 
+
 #### Rady na cestu:
 
 Aritmetiku provádějte v proměnné typu `int`.
@@ -69,6 +70,7 @@ Inspiraci pro uživatelské rozhraní můžete načerpat zde:
 
 ![Screenshot](img/ukol09-husy2a.png)
 ![Screenshot](img/ukol09-husy2b.png)
+
 
 
 #### Rady na cestu:

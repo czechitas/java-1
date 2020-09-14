@@ -58,6 +58,7 @@ Labely vytvořte pevně velké (např. 32x32), nastavte jim vlastnosti
 Když uživatel klikne na nějakou barvu, mělo by se napříště vyplňovat touto barvou.
 
 
+
 #### Rady na cestu:
 
 - Připravte si vlastní sadu barev k vyplňování.
@@ -68,8 +69,6 @@ několik barev, které k sobě pěkně ladí.
 Můžete ho využít, pokud byste opravdu nevěděli kudy kam.
 Pokud to zvládnete bez něj, více se naučíte.
 
-
-            
 
 
 ### Část 3 - Příprava vlastní mandaly
@@ -112,10 +111,7 @@ V materiálech lekce jsou 2 hotové funkční mandaly.
 
 
 
-
-
 ### Nepovinná část 4 - Vylepšení
-
 
 Program mandal jakkoliv vylepšete.
 Napadá mě mnoho způsobů, co by ještě appka mohla umět.

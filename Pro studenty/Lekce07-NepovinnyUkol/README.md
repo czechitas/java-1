@@ -9,6 +9,7 @@ nastavte jako `private`. Jinými slovy, přidejte do třídy `Datum` to,
 co jste programovali v minulém domácím úkolu.
 
 
+
 ### Část 2
 
 Dokončete projekt **Pexeso**, třídu `Karticka`.
@@ -21,6 +22,7 @@ Dokončete metody `otoc()` a `odeber()` z hodiny.
     Pokud je kartička v jiném stavu (tj. `"odebrana"`), nestane se nic.
   - Metoda `odeber(`) změní `stav` na `"odebrana"`, bez ohledu na to, jaký byl
     předchozí `stav`.
+
 
 
 ### Odevzdání domácího úkolu
