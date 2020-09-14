@@ -1,12 +1,12 @@
-Úkol 04 - Třídy a objekty
--------------------------
+Lekce 05 - Úkol 04 - Třídy a objekty
+-------------------------------------
 
 ### Část 1
 
 Založte nový projekt, stejně jako v hodině:
 **Create new project -> User Defined Template -> Java Console App**.
 Nazvěte ho `20-Model_pocitace`,
-uložte do `JAVATRAINING/Projects/Java-1/Lekce05/20-Model_pocitace`
+uložte do `JAVATRAINING/Projects/Java-1/Lekce05-Ukol/20-Model_pocitace`
 a base package zvolte `cz.czechitas.pocitac`.
 
 Vytvořte třídy `Disk`, `Pamet`, `Procesor`, `Pocitac` tak,
@@ -63,12 +63,12 @@ podobně, jak jsme to dělali v hodině.
 
 Do třídy `Pocitac` navíc naprogramujte metodu `zapniSe()` a `vypniSe()`,
 které budou "zapínat" a "vypínat" počítač, t.j. nastavovat proměnnou
-`jeZapnuty` na správnou hodnotu a vypíše o tom informaci.
+`jeZapnuty` na správnou hodnotu a vypíší o tom informaci (klasicky pomocí `System.out.println(...)`).
 Počítač je možno zapnout jen v případě,
 že má procesor, pamět i disk.
 Pokud kterákoliv část chybí (např. `ram == null`),
 metoda `zapniSe()` vypíše chybovou hlášku
-(klasicky pomocí `System.out.println()`)
+(pomocí `System.out.println(...)`)
 a počítač se nezapne (nenastaví proměnnou `jeZapnuty` na `true`).
 Počítač není možno zapnout dvakrát. Při takovém pokusu
 opět vypište chybovou hlášku.
@@ -91,14 +91,14 @@ public static void main(String[] args) {
                                   // nema vsechny povinne soucasti
 
     Procesor kamiluvProcesor = new Procesor();
-    kamiluvProcesor.rychlost = 3600L * 1000L * 1000L;
+    kamiluvProcesor.rychlost = 3_600_000_000L;      // 3.6 GHz
     kamiluvProcesor.vyrobce = "Intel";
 
     Pamet kamilovaPamet = new Pamet();
-    kamilovaPamet.kapacita = 32L * 1024L * 1024L * 1024L;
+    kamilovaPamet.kapacita = 32_000_000_000L;       // 32 GB
 
     Disk kamiluvDisk = new Disk();
-    kamiluvDisk.kapacita = 150L * 1000L * 1000L * 1000L;
+    kamiluvDisk.kapacita = 150_000_000_000L;        // 150 GB
 
     kamiluvLaptop.cpu = kamiluvProcesor;
     kamiluvLaptop.ram = kamilovaPamet;
@@ -127,6 +127,10 @@ což není dostatečné pro kapacitu harddisku ani paměti.
 Proto použijte `long`, který zvládne čísla od
 `-9223372036854775808` do `+9223372036854775807`.
 To už je dostatečné na uchování libovolné současné kapacity harddisku.
+
+Poznámka 2: V zápisu čísla lze kdekoliv mezi číslicemi napsat `_`.
+Je to nepovinné a používá se to pro lepší čitelnost.
+
 
 
 ### Část 2
@@ -157,6 +161,7 @@ Metody budou fungovat pouze, pokud je počítač zapnutý.
 Demonstrujte v `main(...)`, že se metody chovají, jak mají.
 
 
+
 ### Část 3 - Nepovinná část
 
 Tuto část nemusíte naprogramovat, a přesto vám bude úkol uznán jako splněný. Ale zkuste to :-)
@@ -180,7 +185,11 @@ Teprve pokud se soubor nedá vytvořit ani na druhém
 harddisku, vypíše metoda `vytvorSouborOVelikosti(long velikost)`
 chybu.
 
+Pozor, nezapomeňte, že by počítač měl fungovat jak při 2 osazených discích,
+tak při i jen 1 osazeném disku (`druhyDisk == null`).
+
 Demonstrujte v `main(...)`, že se metody chovají, jak mají.
+
 
 
 ### Odevzdání domácího úkolu

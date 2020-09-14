@@ -1,5 +1,5 @@
-Úkol 03 - Metody s parametrem
------------------------------
+Lekce 03 - Úkol 03 - Metody s parametrem
+----------------------------------------
 
 ### Část 1
 

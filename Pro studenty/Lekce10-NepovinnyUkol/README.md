@@ -1,5 +1,5 @@
-Nepovinný úkol - Piškvorky 3x3
-------------------------------
+Lekce 10 - Nepovinný úkol - Piškvorky 3x3
+-----------------------------------------
 
 
 ### Zadání
