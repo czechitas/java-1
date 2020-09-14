@@ -1,8 +1,7 @@
-Úkol 06 - Bankovní účty
------------------------
+Lekce 08 - Úkol 06 - Bankovní účty
+----------------------------------
 
-Vyjděte z předpřipraveného projektu **60-Banka-Zadani**
-zde: [Java-Training--Projects--Java-1--Lekce08-Ukol.zip](../../data/2019-podzim/java1/Java-Training--Projects--Java-1--Lekce08-Ukol.zip).
+Vyjděte z předpřipraveného projektu **60-Banka-Zadani**.
 
 
 
