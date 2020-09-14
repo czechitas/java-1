@@ -1,5 +1,5 @@
-Úkol 07 - Husy a králíci
-------------------------
+Lekce 09 - Úkol 07 - Husy a králíci
+-----------------------------------
 
 Naprogramujte vylepšenou aplikaci Farmářka (založenou na Husách a králících z lekce).
 

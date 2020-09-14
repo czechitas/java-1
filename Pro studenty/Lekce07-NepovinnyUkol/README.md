@@ -1,5 +1,5 @@
-Nepovinný úkol - Dokončení z hodiny
------------------------------------
+Lekce 07 - Nepovinný úkol - Dokončení z hodiny
+----------------------------------------------
 
 ### Část 1
 
