@@ -61,7 +61,7 @@ Pocitac
 Do každé třídy naprogramujte `toString()`,
 podobně, jak jsme to dělali v hodině.
 
-Do třídy `Pocitac` navíc naprogramujte metodu `zapniSe()` a `vypniSe()`,
+Do třídy `Pocitac` navíc naprogramujte metody `zapniSe()` a `vypniSe()`,
 které budou "zapínat" a "vypínat" počítač, t.j. nastavovat proměnnou
 `jeZapnuty` na správnou hodnotu a vypíší o tom informaci (klasicky pomocí `System.out.println(...)`).
 Počítač je možno zapnout jen v případě,
