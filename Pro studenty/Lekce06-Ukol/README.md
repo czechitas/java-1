@@ -1,5 +1,5 @@
-Úkol 05 - Vlastnosti
---------------------
+Lekce 06 - Úkol 05 - Vlastnosti
+-------------------------------
 
 Úkolem je naprogramovat třídu na práci s dnem, měsícem a rokem.
 Podobná třída už existuje v Javě, ale my si ji ze cvičných důvodů napíšeme znovu.

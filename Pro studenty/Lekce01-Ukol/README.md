@@ -1,5 +1,5 @@
-Úkol 01 - Bublanina
--------------------
+Lekce 01 - Úkol 01 - Bublanina
+------------------------------
 
 Za domácí úkol je přepsat složenou Bublaninu do Javy do projektu
 **JAVATRAINING/Projects/Java-1/Lekce01/20-Bublanina-Zadani-v2.12** (v editoru IntelliJ IDEA) z fotky z hodiny, kterou jste si

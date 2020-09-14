@@ -1,7 +1,9 @@
-Úkol 08 - Seriózní desktopová aplikace - Mandala
-------------------------------------------------
+Lekce 11 - Úkol 08 - Seriózní desktopová aplikace - Mandala
+-----------------------------------------------------------
 
 Cílem domácího úkolu je naprogramovat desktopovou aplikaci pro vymalovávání mandal.
+
+
 
 ### Část 1 - Vyplňování místo kreslení
 
