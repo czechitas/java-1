@@ -1,194 +1,275 @@
-Lekce 05 - Úkol 04 - Třídy a objekty
--------------------------------------
+Úkol 04 - Třídy a objekty
+-------------------------
 
 ### Část 1
 
 Založte nový projekt, stejně jako v hodině:
 **Create new project -> User Defined Template -> Java Console App**.
-Nazvěte ho `20-Model_pocitace`,
-uložte do `JAVATRAINING/Projects/Java-1/Lekce05-Ukol/20-Model_pocitace`
-a base package zvolte `cz.czechitas.pocitac`.
+Nazvěte ho `30-Model_automobilu`,
+uložte do `JAVATRAINING/Projects/Java-1/Lekce05/30-Model_automobilu`
+a base package zvolte `cz.czechitas.automobil`.
 
-Vytvořte třídy `Disk`, `Pamet`, `Procesor`, `Pocitac` tak,
+Vytvořte třídy `PalivovaNadrz`, `Motor`, `Automobil` tak,
 aby měly následující složky:
 
 ~~~~
-Disk
+PalivovaNadrz
   |
-  +-- long kapacita;
+  +-- double objemPaliva
   |
-  +-- long vyuziteMisto;
-  |
-  +-- public String toString()
-~~~~
-
-~~~~
-Pamet
-  |
-  +-- long kapacita;
+  +-- double maxKapacita
   |
   +-- public String toString()
 ~~~~
 
 ~~~~
-Procesor
+Motor
   |
-  +-- String vyrobce;
-  |
-  +-- long rychlost;
+  +-- double prumernaSpotreba
   |
   +-- public String toString()
 ~~~~
 
 ~~~~
-Pocitac
+Automobil
   |
-  +-- boolean jeZapnuty;
+  +-- Motor motor
   |
-  +-- Procesor cpu;
-  |
-  +-- Pamet ram;
-  |
-  +-- Disk pevnyDisk;
+  +-- PalivovaNadrz nadrz
   |
   +-- public String toString()
-  |
-  +-- public void zapniSe()
-  |
-  +-- public void vypniSe()
 ~~~~
 
 Do každé třídy naprogramujte `toString()`,
 podobně, jak jsme to dělali v hodině.
 
-Do třídy `Pocitac` navíc naprogramujte metodu `zapniSe()` a `vypniSe()`,
-které budou "zapínat" a "vypínat" počítač, t.j. nastavovat proměnnou
-`jeZapnuty` na správnou hodnotu a vypíší o tom informaci (klasicky pomocí `System.out.println(...)`).
-Počítač je možno zapnout jen v případě,
-že má procesor, pamět i disk.
-Pokud kterákoliv část chybí (např. `ram == null`),
-metoda `zapniSe()` vypíše chybovou hlášku
-(pomocí `System.out.println(...)`)
-a počítač se nezapne (nenastaví proměnnou `jeZapnuty` na `true`).
-Počítač není možno zapnout dvakrát. Při takovém pokusu
-opět vypište chybovou hlášku.
-Počítač je možno vypnout vícekrát, ale opakované volání
-metody `vypniSe()` se ignoruje.
+Pozor, aby `toString()` ve třídě `Automobil` zvládl vypsat
+auto i když nebude mít osazený motor nebo nádrž (např. `motor == null`).
 
 V metodě `main(...)` ve `SpousteciTrida` vytvořte
-model **svého** počítače a vyzkoušejte, že vám fungují správně metody
-`toString()` u všech tříd a že počítač jde zapnout,
-jen pokud je správně sestavený.
+model **svého** automobilu a vyzkoušejte, že vám fungují správně metody
+`toString()` u všech tříd.
 
-Příklad metody `main(...)` Kamilova počítače:
-
+Mohlo by to vypadat třeba takto:
 ~~~~
 public static void main(String[] args) {
-    Pocitac kamiluvLaptop;
-    kamiluvLaptop = new Pocitac();
-    System.out.println(kamiluvLaptop.toString());
-    kamiluvLaptop.zapniSe();      // Vypise chybu, protoze pocitac
-                                  // nema vsechny povinne soucasti
+    Automobil modreAuto;
+    modreAuto = new Automobil();
+    System.out.println(modreAuto.toString());
 
-    Procesor kamiluvProcesor = new Procesor();
-    kamiluvProcesor.rychlost = 3_600_000_000L;      // 3.6 GHz
-    kamiluvProcesor.vyrobce = "Intel";
+    Motor osmivalcovyMotor = new Motor();
+    osmivalcovyMotor.prumernaSpotreba = 5.0;
 
-    Pamet kamilovaPamet = new Pamet();
-    kamilovaPamet.kapacita = 32_000_000_000L;       // 32 GB
+    PalivovaNadrz malaNadrz = new PalivovaNadrz();
+    malaNadrz.maxKapacita = 55.0;
 
-    Disk kamiluvDisk = new Disk();
-    kamiluvDisk.kapacita = 150_000_000_000L;        // 150 GB
-
-    kamiluvLaptop.cpu = kamiluvProcesor;
-    kamiluvLaptop.ram = kamilovaPamet;
-    kamiluvLaptop.pevnyDisk = kamiluvDisk;
-
-    System.out.println(kamiluvLaptop.toString());
-
-    kamiluvLaptop.zapniSe();
-    kamiluvLaptop.zapniSe();      // Vypise chybu, protoze pocitac uz bezi
-    System.out.println(kamiluvLaptop.toString());
-    kamiluvLaptop.vypniSe();
-
-    kamiluvLaptop.vypniSe();      // Nevypise chybu, ale nic neprovede,
-    kamiluvLaptop.vypniSe();      // protoze pocitac je uz vypnuty
+    Automobil cerveneAuto;
+    cerveneAuto = new Automobil();
+    cerveneAuto.motor = osmivalcovyMotor;
+    cerveneAuto.nadrz = malaNadrz;
+    System.out.println(cerveneAuto.toString());
 }
 ~~~~
+a výsledek by byl:
+~~~~
+Automobil []
+Automobil [Motor: prumerna spotreba: 5.0 litru / 100 km. Nadrz naplnena 0.0 litry paliva z maxima 55.0 litru]
+~~~~
 
-Nezapomeňte, že je úkolem vytvořit **model svého počítače**.
-Parametry vašeho počítače budou pravděpodobně **jiné** než
-Kamilova počítače.
-
-Poznámka: Číslo, které končí na `L` znamená, že jde o číslo
-typu `long` a nikoliv `int`. Rozdíl je v rozsahu.
-`int` pojme čísla od `-2147483648` do `+2147483647`,
-což není dostatečné pro kapacitu harddisku ani paměti.
-Proto použijte `long`, který zvládne čísla od
-`-9223372036854775808` do `+9223372036854775807`.
-To už je dostatečné na uchování libovolné současné kapacity harddisku.
-
-Poznámka 2: V zápisu čísla lze kdekoliv mezi číslicemi napsat `_`.
-Je to nepovinné a používá se to pro lepší čitelnost.
 
 
 
 ### Část 2
 
-Vylepšete třídu `Pocitac` o metody:
+Do třídy `Automobil` navíc naprogramujte tyto složky:
 ~~~~
-Pocitac
+Automobil
+  |
+  +-- boolean jeNastartovany
   |
  ...
 predchozi obsah
  ...
   |
-  +-- public void vytvorSouborOVelikosti(long velikost)
+  +-- public void nastartujSe()
   |
-  +-- public void vymazSouboryOVelikosti(long velikost)
+  +-- public void vypniSe()
 ~~~~
 
-Metoda `vytvorSouborOVelikosti(long velikost)`
-zvýší proměnnou `vyuziteMisto` o `velikost`.
-Pokud by se už nově vytvářený soubor na disk nevešel
-(`vyuziteMisto > kapacita`), metoda vypíše chybu a
-`vyuziteMisto` se nebude měnit.
-Metoda `vymazSouboryOVelikosti(long velikost)`
-sníží proměnnou `vyuziteMisto` o `velikost`.
-`vyuziteMisto` nemůže klesnout pod `0`.
-Metody budou fungovat pouze, pokud je počítač zapnutý.
+Metody `nastartujSe()` a `vypniSe()` budou "startovat" a "vypínat" automobil, t.j. nastavovat proměnnou
+`jeNastartovany` na správnou hodnotu a vypíší o tom informaci.
+Automobil je možno nastartovat jen v případě,
+že má motor a nádrž.
+Pokud kterákoliv část chybí (např. `motor == null`),
+metoda `nastartujSe()` vypíše chybovou hlášku
+(klasicky pomocí `System.out.println()`)
+a automobil se nenastartuje (nenastaví proměnnou `jeNastartovany` na `true`).
+Automobil není možno nastartovat dvakrát. Při takovém pokusu
+se opět vypíše chybová hláška.
+Automobil je možno vypnout vícekrát, ale opakované volání
+metody `vypniSe()` se ignoruje.
 
-Demonstrujte v `main(...)`, že se metody chovají, jak mají.
+V metodě `main(...)` ve `SpousteciTrida` doplňte
+volání těchto metod. Vyzkoušejte, že vám fungují správně metody
+`toString()` u všech tříd a že automobil jde nastartovat,
+jen pokud je správně sestavený.
+
+Pro zjednodušení se chovejme tam, že motor běžící naprázdno (na volnoběh) nespotřebovává žádné palivo.
 
 
-
-### Část 3 - Nepovinná část
-
-Tuto část nemusíte naprogramovat, a přesto vám bude úkol uznán jako splněný. Ale zkuste to :-)
-
-Vylepšete třídu `Pocitac` o druhý disk:
+Příklad metody `main(...)` Kamilova auta:
 ~~~~
-Pocitac
+public static void main(String[] args) {
+    Automobil modreAuto;
+    modreAuto = new Automobil();
+    System.out.println(modreAuto.toString());
+    modreAuto.nastartujSe();
+    System.out.println(modreAuto.toString());
+
+    Motor osmivalcovyMotor = new Motor();
+    osmivalcovyMotor.prumernaSpotreba = 5.0;
+
+    PalivovaNadrz malaNadrz = new PalivovaNadrz();
+    malaNadrz.maxKapacita = 55.0;
+
+    Automobil cerveneAuto;
+    cerveneAuto = new Automobil();
+    cerveneAuto.motor = osmivalcovyMotor;
+    cerveneAuto.nastartujSe();
+    System.out.println(cerveneAuto.toString());
+
+    cerveneAuto.nadrz = malaNadrz;
+    cerveneAuto.nastartujSe();
+    System.out.println(cerveneAuto.toString());
+
+    cerveneAuto.vypniSe();
+    System.out.println(cerveneAuto.toString());
+}
+~~~~
+a výsledek by byl:
+~~~~
+Automobil []
+Automobilu chybi motor. Nelze ho nastartovat.
+Automobil []
+Automobilu chybi nadrz. Nelze ho nastartovat.
+Automobil [Motor: prumerna spotreba: 5.0 litru / 100 km. ]
+Automobil se nastartoval.
+Nastartovany automobil [Motor: prumerna spotreba: 5.0 litru / 100 km. Nadrz naplnena 0.0 litry paliva z maxima 55.0 litru]
+Automobil se vypnul.
+Automobil [Motor: prumerna spotreba: 5.0 litru / 100 km. Nadrz naplnena 0.0 litry paliva z maxima 55.0 litru]
+~~~~
+
+Nezapomeňte, že je úkolem vytvořit **model svého automobilu**.
+Parametry vašeho automobilu budou pravděpodobně **jiné** než
+Kamilova auta.
+
+
+
+### Část 3
+
+Vylepšete třídu `Automobil` o metodu:
+~~~~
+Automobil
   |
  ...
 predchozi obsah
  ...
   |
-  +-- Disk druhyDisk
+  +-- public void natankuj(double objemTankovanehoPaliva)
 ~~~~
 
-Opravte metody `vytvorSouborOVelikosti(long velikost)`
-a `vymazSouboryOVelikosti(long velikost)` tak,
-aby nejprve zabíraly místo na prvním harddisku
-a potom na druhém.
-Teprve pokud se soubor nedá vytvořit ani na druhém
-harddisku, vypíše metoda `vytvorSouborOVelikosti(long velikost)`
-chybu.
+Metoda `natankuj(double objemTankovanehoPaliva)`
+zvýší proměnnou `objemPaliva` v nádrži o `objemTankovanehoPaliva`.
+Pokud by se tolik tankovaného paliva do nádrže nevešlo
+(`objemTankovanehoPaliva > maxKapacita - objemPaliva`), metoda vypíše chybu a
+`objemPaliva` se nebude měnit.
+Pokud by v autě vůbec nebyla nádrž, metoda opět vypíše chybu.
+Metoda navíc musí fungovat pouze, pokud není automobil nastartovaný.
+Do nastartovaného automobilu se nesmí tankovat a v takovém případě musí metoda
+vypsat chybu a nepřijmout tankované palivo.
 
-Pozor, nezapomeňte, že by počítač měl fungovat jak při 2 osazených discích,
-tak při i jen 1 osazeném disku (`druhyDisk == null`).
+Pozor, když už umíme automobil natankovat, je třeba, aby metoda `nastartujSe()` nastartovala automobil pouze, pokud je v nádrži alespoň nějaké množství paliva. Např. více než 0.01 litru.
 
-Demonstrujte v `main(...)`, že se metody chovají, jak mají.
+Stále chápejme běh motoru naprázdno (na volnoběh) tak, že nespotřebovává žádné palivo. Tedy nějaké palivo v nádrži být musí, ale pokud auto nastartujeme, nebude žádné palivo ubývat.
+
+
+Metoda `main(...)` by mohla vypadat například takto:
+~~~~
+public static void main(String[] args) {
+    Automobil modreAuto;
+    modreAuto = new Automobil();
+    System.out.println(modreAuto.toString());
+    modreAuto.nastartujSe();
+    System.out.println(modreAuto.toString());
+
+    Motor osmivalcovyMotor = new Motor();
+    osmivalcovyMotor.prumernaSpotreba = 5.0;
+
+    PalivovaNadrz malaNadrz = new PalivovaNadrz();
+    malaNadrz.maxKapacita = 55.0;
+
+    Automobil cerveneAuto;
+    cerveneAuto = new Automobil();
+    cerveneAuto.motor = osmivalcovyMotor;
+    cerveneAuto.nastartujSe();
+    System.out.println(cerveneAuto.toString());
+
+    cerveneAuto.nadrz = malaNadrz;
+    cerveneAuto.nastartujSe();
+    System.out.println(cerveneAuto.toString());
+
+    cerveneAuto.vypniSe();
+    System.out.println(cerveneAuto.toString());
+
+    cerveneAuto.nastartujSe();
+
+    cerveneAuto.natankuj(33.0);
+    cerveneAuto.nastartujSe();
+    System.out.println(cerveneAuto.toString());
+
+    cerveneAuto.vypniSe();
+    cerveneAuto.natankuj(30.0);
+    System.out.println(cerveneAuto.toString());
+
+    cerveneAuto.nastartujSe();
+    cerveneAuto.natankuj(20.0);
+}
+~~~~
+a výsledek by byl:
+~~~~
+Automobil []
+Automobilu chybi motor. Nelze ho nastartovat.
+Automobil []
+Automobilu chybi nadrz. Nelze ho nastartovat.
+Automobil [Motor: prumerna spotreba: 5.0 litru / 100 km. ]
+Automobilu ma prazdnou nadrz. Nelze ho nastartovat.
+Automobil [Motor: prumerna spotreba: 5.0 litru / 100 km. Nadrz naplnena 0.0 litry paliva z maxima 55.0 litru]
+Automobil je jiz vypnuty.
+Automobil [Motor: prumerna spotreba: 5.0 litru / 100 km. Nadrz naplnena 0.0 litry paliva z maxima 55.0 litru]
+Automobilu ma prazdnou nadrz. Nelze ho nastartovat.
+Natankovali jste 33.0 litru paliva.
+Automobil se nastartoval.
+Nastartovany automobil [Motor: prumerna spotreba: 5.0 litru / 100 km. Nadrz naplnena 33.0 litry paliva z maxima 55.0 litru]
+Automobil se vypnul.
+Snazite se natankovat vice paliva (30.0 litru) nez se vejde do nadrze (22.0 litru).
+Automobil [Motor: prumerna spotreba: 5.0 litru / 100 km. Nadrz naplnena 33.0 litry paliva z maxima 55.0 litru]
+Automobil se nastartoval.
+Automobil je nastartovany. Tankovat se musi s vypnutym motorem.
+~~~~
+
+
+
+### Část 4
+
+Naprogramujte do třídy `Automobil` ještě metodu `odjedVzdalenost(double pocetKilometru)`.
+Metoda sníží objem paliva v nádrži podle ujetých kilometrů.
+Nezapomeňte, že průměrná spotřeba se počítá v litrech na 100 km.
+Např. máte-li průměrnou spotřebu 5 litrů na 100 km a ujedete 150 km,
+pak spotřebujete z nádrže 7.5 litrů paliva.
+
+Odjet vzdálenost samozřejmě půjde pouze, pokud bude automobil nastartovaný a pokud bude mít dostatek paliva. V opačném případě vypište příslušnou chybovou hlášku a žádné palivo nespotřebovávejte.
+
+Demonstrujte v `main(...)`, že se `odjedVzdalenost(...)` chová, jak má.
 
 
 
