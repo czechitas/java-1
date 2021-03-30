@@ -6,19 +6,33 @@ import cz.czechitas.recept.suroviny.*;
 public class SpousteciTrida {
 
     public static void main(String[] args) {
-        Miska cervenaMiska = new Miska("cervenaMiska");
-        Miska zlutaMiska = new Miska("zlutaMiska");
-        Mixer mixer = new Mixer("mixer");
-        Vaha kuchynskaVaha = new Vaha("vaha");
-        PlechNaPeceni plech = new PlechNaPeceni("plech");
-        ElektrickaTrouba trouba = new ElektrickaTrouba("trouba");
+        Miska cervenaMiska;
+        Miska zlutaMiska;
+        Mixer mixer;
+        Vaha kuchynskaVaha;
+        PlechNaPeceni plech;
+        ElektrickaTrouba trouba;
+        Vajicka vajicka;
 
-        Vajicka vajicka = new Vajicka("vajicka");
-        Ovoce ovoce = new Ovoce("ovoce");
-        Maslo maslo125g = new Maslo("maslo125g");
-        Mouka pytlikMouky = new Mouka("pytlikMouky");
-        Cukr pytlikCukru = new Cukr("pytlikCukru");
-        PrasekDoPeciva prasekDoPeciva = new PrasekDoPeciva("prasekDoPeciva");
+        Ovoce ovoce;
+        Maslo maslo125g;
+        Mouka pytlikMouky;
+        Cukr pytlikCukru;
+        PrasekDoPeciva prasekDoPeciva;
+
+        cervenaMiska = new Miska("cervenaMiska");
+        zlutaMiska = new Miska("zlutaMiska");
+        mixer = new Mixer("mixer");
+        kuchynskaVaha = new Vaha("vaha");
+        plech = new PlechNaPeceni("plech");
+        trouba = new ElektrickaTrouba("trouba");
+
+        vajicka = new Vajicka("vajicka");
+        ovoce = new Ovoce("ovoce");
+        maslo125g = new Maslo("maslo125g");
+        pytlikMouky = new Mouka("pytlikMouky");
+        pytlikCukru = new Cukr("pytlikCukru");
+        prasekDoPeciva = new PrasekDoPeciva("prasekDoPeciva");
 
         //---------------------------------------------------------------------
 
