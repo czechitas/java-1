@@ -7,7 +7,7 @@ public class HlavniProgram {
 
     public void main(String[] args) {
 
-        new AngryRed(400, 200);
+        new Fish(50, 50);
         // TODO: Sem vepiste svuj program
 
     }

@@ -1,4 +1,4 @@
-package cz.czechitas.intro.engine;
+package cz.czechitas.intro.engine.swing;
 
 import java.io.*;
 import java.lang.reflect.*;
@@ -6,14 +6,12 @@ import java.util.*;
 import java.util.concurrent.*;
 import javax.imageio.*;
 import javax.swing.*;
-import cz.czechitas.intro.api.*;
 import net.sevecek.util.*;
 
 public class Utils {
 
-    public static final String SPRITE_FOLDER = "/images/";
+    public static final String SPRITE_FOLDER = "images/";
     private static Map<String, Icon> spriteCache = new HashMap<>();
-
 
     public synchronized static Icon loadSprite(String spriteName) {
         Icon sprite = spriteCache.get(spriteName);
@@ -22,15 +20,17 @@ public class Utils {
         }
 
         String spriteFilename = SPRITE_FOLDER + spriteName;
-        try (InputStream stream = Figure.class.getResourceAsStream(spriteFilename)) {
+        try (InputStream stream = Thread.currentThread().getContextClassLoader().getResourceAsStream(spriteFilename)) {
+            if (stream == null) {
+                throw new IllegalArgumentException("Unable to find file classpath:/" + spriteName);
+            }
             sprite = new ImageIcon(ImageIO.read(stream));
             spriteCache.put(spriteName, sprite);
             return sprite;
         } catch (IOException ex) {
-            throw new ApplicationPublicException(ex, "Nepodařilo se nahrát sprite {0}", spriteName);
+            throw new IllegalArgumentException("Unable to find file classpath:/" + spriteName);
         }
     }
-
 
     public static <RESULT> RESULT invokeAndWait(Callable<RESULT> code) {
         if (Thread.currentThread().isInterrupted()) {
@@ -67,9 +67,7 @@ public class Utils {
         }
         if (!SwingUtilities.isEventDispatchThread()) {
             try {
-                SwingUtilities.invokeAndWait(() -> {
-                    code.run();
-                });
+                SwingUtilities.invokeAndWait(code);
             } catch (Exception e) {
                 throw ExceptionUtils.rethrowAsUnchecked(e);
             }
@@ -79,14 +77,15 @@ public class Utils {
     }
 
     public static void invokeLater(Runnable code) {
-        if (Thread.currentThread().isInterrupted()) {
-            throw new CancellationException();
-        }
-        if (!SwingUtilities.isEventDispatchThread()) {
-            SwingUtilities.invokeLater(code);
-        } else {
-            code.run();
-        }
+        invokeAndWait(code);
+//        if (Thread.currentThread().isInterrupted()) {
+//            throw new CancellationException();
+//        }
+//        if (!SwingUtilities.isEventDispatchThread()) {
+//            SwingUtilities.invokeLater(code);
+//        } else {
+//            code.run();
+//        }
     }
 
     public static boolean detectCollision(JComponent component1, JComponent component2) {
@@ -109,9 +108,11 @@ public class Utils {
         }
     }
 
+    //-------------------------------------------------------------------------
+
     private static class Holder<T> {
 
-        public T value;
+        T value;
 
     }
 }

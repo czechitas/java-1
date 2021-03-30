@@ -4,12 +4,15 @@ import java.awt.*;
 import java.util.*;
 import javax.swing.*;
 import cz.czechitas.intro.engine.*;
+import cz.czechitas.intro.engine.swing.*;
 import net.sevecek.util.*;
+
+import static cz.czechitas.intro.api.CollisionType.*;
 
 public abstract class Figure {
 
     private JLabel sprite;
-    private volatile boolean isRemoved;
+    private volatile boolean isAlive = true;
 
     protected Figure() {
     }
@@ -25,55 +28,79 @@ public abstract class Figure {
             Container mainWindowContentPane = MainWindow.getInstance().getContentPane();
             mainWindowContentPane.add(sprite, "external");
 
-            moveElsewhereIfCollision();
+            moveElsewhereIfColliding();
             mainWindowContentPane.repaint();
         });
     }
 
-    private void moveElsewhereIfCollision() {
+    private void moveElsewhereIfColliding() {
         Container mainWindowContentPane = MainWindow.getInstance().getContentPane();
-        Gameboard gameboard = Gameboard.getInstance();
+        Gameplay gameplay = Gameplay.getInstance();
         int x = sprite.getX();
         int y = sprite.getY();
         int originalX = x;
         int originalY = y;
         while (true) {
-            boolean collision = gameboard.detectCollisionWithAnyOtherFigure(sprite);
-            if (!collision) return;
-            x = x + 1;
-            if (x + sprite.getWidth() > mainWindowContentPane.getWidth()) {
-                x = originalX;
+            CollisionType collisionResult = gameplay.detectCollisionWithAnyOtherFigure(this);
+            if (collisionResult == NO_COLLISION) {
+                return;
+            } else if (collisionResult == STACKABLE_COLLISION) {
+                replaceWithStackedImage();
+                return;
+            } else {
+                x = ((x / 50) * 50) + 50;
+                if (x + sprite.getWidth() > mainWindowContentPane.getWidth()) {
+                    x = originalX;
+                    sprite.setLocation(x, y);
+                    break;
+                }
                 sprite.setLocation(x, y);
-                break;
             }
-            sprite.setLocation(x, y);
         }
         while (true) {
-            boolean collision = gameboard.detectCollisionWithAnyOtherFigure(sprite);
-            if (!collision) return;
-            y = y + 1;
-            if (y + sprite.getHeight() > mainWindowContentPane.getHeight()) {
-                y = originalY;
+            CollisionType collisionResult = gameplay.detectCollisionWithAnyOtherFigure(this);
+            if (collisionResult == NO_COLLISION) {
+                return;
+            } else if (collisionResult == STACKABLE_COLLISION) {
+                replaceWithStackedImage();
+                return;
+            } else {
+                y = ((y / 50) * 50) + 50;
+                if (y + sprite.getHeight() > mainWindowContentPane.getHeight()) {
+                    y = originalY;
+                    sprite.setLocation(x, y);
+                    break;
+                }
                 sprite.setLocation(x, y);
-                break;
             }
-            sprite.setLocation(x, y);
         }
 
         Random randomGenerator = new Random();
         int attemptCount = 0;
-        while (gameboard.detectCollisionWithAnyOtherFigure(sprite)) {
-            x = randomGenerator.nextInt(mainWindowContentPane.getWidth() - sprite.getWidth());
-            y = randomGenerator.nextInt(mainWindowContentPane.getHeight() - sprite.getHeight());
+        while (true) {
+            x = (randomGenerator.nextInt(mainWindowContentPane.getWidth() - sprite.getWidth()) / 50) * 50;
+            y = (randomGenerator.nextInt(mainWindowContentPane.getHeight() - sprite.getHeight()) / 50) * 50;
             sprite.setLocation(x, y);
+            CollisionType collisionResult = gameplay.detectCollisionWithAnyOtherFigure(this);
+            if (collisionResult == NO_COLLISION) {
+                return;
+            } else if (collisionResult == STACKABLE_COLLISION) {
+                replaceWithStackedImage();
+                return;
+            }
             attemptCount++;
             if (attemptCount > 1000) {
-                throw new ApplicationPublicException("Ani po mnoha pokusech se nepodařilo najít volné místo pro figurku. Plocha je nejspíš plná.");
+                throw new ApplicationPublicException("We were unable to find a place for the figure even after many attempts. Is the gameboard full?");
             }
         }
     }
 
-    protected JLabel getSprite() {
+    private void replaceWithStackedImage() {
+        sprite.getParent().setComponentZOrder(sprite, 1);
+        sprite.setIcon(((Stackable) this).getStackableIcon());
+    }
+
+    public JLabel getSprite() {
         return sprite;
     }
 
@@ -109,13 +136,13 @@ public abstract class Figure {
         });
     }
 
-    public boolean isRemoved() {
-        return isRemoved;
+    public boolean isAlive() {
+        return isAlive;
     }
 
     public void remove() {
         Utils.invokeAndWait(() -> {
-            isRemoved = true;
+            isAlive = false;
             Container contentPane = MainWindow.getInstance().getContentPane();
             sprite.setVisible(false);
             contentPane.repaint();

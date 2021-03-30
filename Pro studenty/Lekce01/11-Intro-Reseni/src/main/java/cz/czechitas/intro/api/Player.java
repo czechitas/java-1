@@ -3,7 +3,10 @@ package cz.czechitas.intro.api;
 import java.awt.*;
 import javax.swing.*;
 import cz.czechitas.intro.engine.*;
+import cz.czechitas.intro.engine.swing.*;
 import net.sevecek.util.*;
+
+import static cz.czechitas.intro.api.CollisionType.*;
 
 public abstract class Player extends Figure {
 
@@ -17,7 +20,7 @@ public abstract class Player extends Figure {
     @Override
     @Deprecated
     protected void init(Icon picture, int x, int y) {
-        throw new AssertionError("This method is inaccessible");
+        throw new UnsupportedOperationException("This method is inaccessible. Use init(Icon picture, int x, int y, PlayerType playerType) instead.");
     }
 
     protected void init(Icon picture, int x, int y, PlayerType playerType) {
@@ -32,10 +35,10 @@ public abstract class Player extends Figure {
 
     public void setBrain(Brain brain) {
         if (this.brain != null) {
-            Gameboard.getInstance().stopMoving(this);
+            Gameplay.getInstance().stopMoving(this);
         }
         this.brain = brain;
-        Gameboard.getInstance().startMoving(this);
+        Gameplay.getInstance().startMoving(this);
     }
 
     public PlayerOrientation getOrientation() {
@@ -48,7 +51,7 @@ public abstract class Player extends Figure {
     }
 
     public void moveForward() {
-        moveForward(50);
+        moveForward(10);
     }
 
     public void moveForward(int pixels) {
@@ -78,9 +81,12 @@ public abstract class Player extends Figure {
         if (getOrientation() == PlayerOrientation.DOWN) {
             location.y += 5;
         }
+        // Align to 5x5 grid
+        location.x = location.x - location.x % 5;
+        location.y = location.y - location.y % 5;
         sprite.setLocation(location);
 
-        Gameboard.getInstance().detectCollisionBetweenPlayers();
+        Gameplay.getInstance().detectCollisionBetweenPlayers();
     }
 
     public void turnLeft() {
@@ -125,8 +131,6 @@ public abstract class Player extends Figure {
 
     public boolean isPossibleToMoveForward() {
         return Utils.invokeAndWait(() -> {
-            boolean result = true;
-
             JLabel sprite = getSprite();
             Point location = sprite.getLocation();
             Point originalLocation = new Point(location);
@@ -142,17 +146,17 @@ public abstract class Player extends Figure {
             if (getOrientation() == PlayerOrientation.DOWN) {
                 location.y += 5;
             }
+            location.x = location.x - location.x % 5;
+            location.y = location.y - location.y % 5;
 
             if (location.x < 0 || location.y < 0
                     || location.x + sprite.getWidth() > sprite.getParent().getWidth()
                     || location.y + sprite.getHeight() > sprite.getParent().getHeight()) {
-                result = false;
+                return false;
             }
 
             sprite.setLocation(location);
-            if (Gameboard.getInstance().detectCollisionWithTrees(sprite)) {
-                result = false;
-            }
+            boolean result = Gameplay.getInstance().detectCollisionWithPassiveFigures(this) == NO_COLLISION;
             sprite.setLocation(originalLocation);
             return result;
         }).booleanValue();
@@ -164,7 +168,7 @@ public abstract class Player extends Figure {
 
     @Override
     public void remove() {
-        Gameboard.getInstance().removePlayer(this);
+        Gameplay.getInstance().removePlayer(this);
         super.remove();
     }
 }

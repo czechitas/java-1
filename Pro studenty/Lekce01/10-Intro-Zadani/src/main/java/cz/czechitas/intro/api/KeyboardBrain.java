@@ -1,6 +1,6 @@
 package cz.czechitas.intro.api;
 
-import cz.czechitas.intro.engine.*;
+import cz.czechitas.intro.engine.swing.*;
 import net.sevecek.util.*;
 import net.sevecek.util.swing.*;
 
@@ -24,9 +24,9 @@ public class KeyboardBrain implements Brain {
 
     @Override
     public void controlPlayer(Player player) {
-        while (true) {
+        while (!Thread.currentThread().isInterrupted()) {
             ThreadUtils.sleep(20L);
-            Utils.invokeLater(() -> {
+            Utils.invokeAndWait(() -> {
                 JKeyboard keyboard = MainWindow.getInstance().getKeyboard();
                 if (keyboard.isKeyDown(keyCodeUp)) {
                     player.setOrientation(PlayerOrientation.UP);

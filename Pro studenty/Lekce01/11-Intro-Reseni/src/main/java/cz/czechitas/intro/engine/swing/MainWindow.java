@@ -1,9 +1,8 @@
-package cz.czechitas.intro.engine;
+package cz.czechitas.intro.engine.swing;
 
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import cz.czechitas.intro.api.*;
 import net.miginfocom.swing.*;
 import net.sevecek.util.swing.*;
 
@@ -14,6 +13,7 @@ public class MainWindow extends JFrame {
     private MigLayout migLayoutManager;
     private JPanel contentPane;
     private JKeyboard keyboard;
+    private JLabel message;
 
     public synchronized static MainWindow getInstance() {
         if (instance == null) {
@@ -36,13 +36,7 @@ public class MainWindow extends JFrame {
 
     private void initComponents() {
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-        Container contentPane = getContentPane();
-        addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-                onWindowClosing(e);
-            }
-        });
+        contentPane = (JPanel) getContentPane();
         contentPane.addComponentListener(new ComponentAdapter() {
             @Override
             public void componentResized(ComponentEvent e) {
@@ -55,20 +49,26 @@ public class MainWindow extends JFrame {
         for (int i = 0; i < 12; i++) {
             rowConstraints += singleCell;
         }
-        String colConstraints = "";
+        String columnConstraints = "";
         for (int i = 0; i < 20; i++) {
-            colConstraints += singleCell;
+            columnConstraints += singleCell;
         }
 
-        this.migLayoutManager = new MigLayout(
-                "insets rel,hidemode 3,gap 0px",
+        migLayoutManager = new MigLayout(
+                "insets 0,hidemode 3,gap 0px",
                 // columns
-                colConstraints,
+                columnConstraints,
                 // rows
                 rowConstraints);
         contentPane.setLayout(migLayoutManager);
-        this.contentPane = (JPanel) this.getContentPane();
-        this.contentPane.setBackground(this.getBackground());
+        contentPane = (JPanel) this.getContentPane();
+        contentPane.setBackground(new Color(114, 167, 245));
+
+        message = new JLabel();
+        Font font = message.getFont().deriveFont(50.0F);
+        message.setFont(font);
+        contentPane.add(message, "pos 50% 50%");
+        contentPane.setComponentZOrder(message, 0);
 
         keyboard = new JKeyboard();
 
@@ -80,20 +80,29 @@ public class MainWindow extends JFrame {
         setTitle(WINDOW_TITLE + " [Size: " + contentPane.getWidth() + " x " + contentPane.getHeight() + "]");
     }
 
-    private void onWindowClosing(WindowEvent evt) {
-        Gameboard.getInstance().stop();
+    public void addWindowClosingListener(Runnable listener) {
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                listener.run();
+            }
+        });
     }
 
     public JKeyboard getKeyboard() {
         return keyboard;
     }
 
-//    public void externFromMigLayout(JLabel sprite) {
-//        migLayoutManager.setComponentConstraints(sprite, "external");
-//    }
-
-    public void updateSpriteLocation(JLabel sprite) {
-        migLayoutManager.setComponentConstraints(sprite, "pos " + sprite.getX() + " " + sprite.getY());
-        contentPane.revalidate();
+    public void showMessage(String text) {
+        message.setText(text);
+        Dimension size = message.getPreferredSize();
+        migLayoutManager.setComponentConstraints(message, "pos 50%-" + size.getWidth() / 2.0 + "px 50%-" + size.getHeight() / 2.0 + "px");
+        migLayoutManager.invalidateLayout(contentPane);
+        repaint();
     }
+
+//    public void updateSpriteLocation(JLabel sprite) {
+//        migLayoutManager.setComponentConstraints(sprite, "pos " + sprite.getX() + " " + sprite.getY());
+//        contentPane.revalidate();
+//    }
 }

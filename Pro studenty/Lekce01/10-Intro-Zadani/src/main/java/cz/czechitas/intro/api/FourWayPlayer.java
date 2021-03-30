@@ -1,6 +1,7 @@
 package cz.czechitas.intro.api;
 
 import javax.swing.*;
+import cz.czechitas.intro.engine.swing.*;
 
 public abstract class FourWayPlayer extends Player {
 
@@ -28,21 +29,23 @@ public abstract class FourWayPlayer extends Player {
 
     @Override
     public void setOrientation(PlayerOrientation orientation) {
-        super.setOrientation(orientation);
-        switch (orientation) {
-            case UP:
-                getSprite().setIcon(upImage);
-                break;
-            case DOWN:
-                getSprite().setIcon(downImage);
-                break;
-            case LEFT:
-                getSprite().setIcon(leftImage);
-                break;
-            case RIGHT:
-                getSprite().setIcon(rightImage);
-                break;
-        }
+        Utils.invokeAndWait(() -> {
+            super.setOrientation(orientation);
+            switch (orientation) {
+                case UP:
+                    getSprite().setIcon(upImage);
+                    break;
+                case DOWN:
+                    getSprite().setIcon(downImage);
+                    break;
+                case LEFT:
+                    getSprite().setIcon(leftImage);
+                    break;
+                case RIGHT:
+                    getSprite().setIcon(rightImage);
+                    break;
+            }
+        });
     }
 
 }
