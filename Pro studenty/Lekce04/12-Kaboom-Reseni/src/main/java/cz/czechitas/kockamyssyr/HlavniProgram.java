@@ -30,7 +30,7 @@ public class HlavniProgram {
             while (syr.getY() < gameManager.getHeight() - 60 && !syr.isRemoved()) {
                 syr.moveForward();
             }
-            if (!syr.isRemoved()) {
+            if (syr.isAlive()) {
                 break;
             }
             syr = pristiSyr;

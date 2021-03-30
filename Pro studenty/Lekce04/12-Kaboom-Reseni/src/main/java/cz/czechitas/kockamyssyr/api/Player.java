@@ -81,6 +81,9 @@ public abstract class Player extends Figure {
         if (getOrientation() == PlayerOrientation.DOWN) {
             location.y += 5;
         }
+        // Align to 5x5 grid
+        location.x = location.x - location.x % 5;
+        location.y = location.y - location.y % 5;
         sprite.setLocation(location);
 
         Gameplay.getInstance().detectCollisionBetweenPlayers();
@@ -143,6 +146,8 @@ public abstract class Player extends Figure {
             if (getOrientation() == PlayerOrientation.DOWN) {
                 location.y += 5;
             }
+            location.x = location.x - location.x % 5;
+            location.y = location.y - location.y % 5;
 
             if (location.x < 0 || location.y < 0
                     || location.x + sprite.getWidth() > sprite.getParent().getWidth()

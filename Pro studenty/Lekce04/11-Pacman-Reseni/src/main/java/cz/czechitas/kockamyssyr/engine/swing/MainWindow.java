@@ -55,7 +55,7 @@ public class MainWindow extends JFrame {
         }
 
         migLayoutManager = new MigLayout(
-                "insets rel,hidemode 3,gap 0px",
+                "insets 0,hidemode 3,gap 0px",
                 // columns
                 columnConstraints,
                 // rows

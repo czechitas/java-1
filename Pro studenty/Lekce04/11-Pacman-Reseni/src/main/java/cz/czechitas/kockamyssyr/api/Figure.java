@@ -12,7 +12,7 @@ import static cz.czechitas.kockamyssyr.api.CollisionType.*;
 public abstract class Figure {
 
     private JLabel sprite;
-    private volatile boolean isRemoved;
+    private volatile boolean isAlive = true;
 
     protected Figure() {
     }
@@ -136,13 +136,13 @@ public abstract class Figure {
         });
     }
 
-    public boolean isRemoved() {
-        return isRemoved;
+    public boolean isAlive() {
+        return isAlive;
     }
 
     public void remove() {
         Utils.invokeAndWait(() -> {
-            isRemoved = true;
+            isAlive = false;
             Container contentPane = MainWindow.getInstance().getContentPane();
             sprite.setVisible(false);
             contentPane.repaint();
