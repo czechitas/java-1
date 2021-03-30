@@ -119,6 +119,7 @@ public class HlavniOkno extends JFrame {
     private void ulozObrazek(File soubor) {
         try {
             ImageIO.write(obrazek, "png", soubor);
+            otevrenySoubor = soubor;
         } catch (IOException ex) {
             throw new ApplicationPublicException(ex, "Nepodařilo se uložit obrázek mandaly do souboru " + soubor.getAbsolutePath());
         }
