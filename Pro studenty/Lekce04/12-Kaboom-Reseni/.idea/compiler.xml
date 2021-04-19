@@ -22,7 +22,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="java-module" target="1.8" />
+      <module name="java-module" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

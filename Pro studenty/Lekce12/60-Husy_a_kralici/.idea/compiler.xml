@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Farmarka1.0" target="1.8" />
+      <module name="Farmarka1.0" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
