@@ -22,7 +22,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="11-Den_narozeni" target="1.8" />
+      <module name="11-Den_narozeni" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
